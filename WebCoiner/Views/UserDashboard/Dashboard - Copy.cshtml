@@ -1,0 +1,860 @@
+﻿@model WebCoiner.Models.Dashboard
+
+@{
+    ViewBag.Title = "Dashboard";
+    double raised = ((double)Model.Raised / 90000000) * 100;
+    var mil = Model.Raised / 1000000;
+}
+
+<app-dashboard _nghost-c3="">
+    <div class="page-content">
+        <div class="container">
+
+           
+            <div class="row">
+
+
+                @*  <div id="mySidenav" class="sidenav">
+            <a href="~/Content/faircoverWhitepaper.pdf" id="about">Whitepaper</a>
+        </div>
+                *@
+
+                <div class="col-lg-3">
+
+
+
+
+                    <div class="box">
+                        <div class="our-services speedup">
+                            <div class="icon"> <img src="~/Content/themes/jur-theme/dist/images/investment.png"> </div>
+                            <h1><span style="color:black;">$</span>@Model.InvestmentAmount.ToString("#,##0")</h1>
+                            <p>Your investment amount</p>
+                        </div>
+                    </div> 
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="box">
+                        <div class="our-services settings">
+                            <div class="icon"> <img src="~/Content/themes/jur-theme/dist/images/balance.png"> </div>
+                            <h1><span style="color:black;">$</span>@Model.CurrentBalance.ToString("#,##0")</h1>
+                            <p>Your current balance</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <div class="box">
+                        <div class="our-services privacy">
+                            <div class="icon"> <img src="~/Content/themes/jur-theme/dist/images/profit.png"> </div>
+                            <h1><span style="color:black;">$</span>@((Model.CurrentBalance - Model.InvestmentAmount).ToString("#,##0"))</h1>
+                            <p>Your Profit</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="box" data-toggle="modal" data-target="#myModal">
+                        <div class="our-services privacy" style="        background-color: #e2665d;">
+                            <div class="icon"> <img src="~/Content/themes/jur-theme/dist/images/package.png"> </div>
+                            <h4 style="color:white;">Packages</h4>
+                            <p style="color:white;">Choose your package here...</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog" style=" width: 90%; max-width: 1200px;">
+                        <div class="modal-content">
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <section class="lis-bg-light">
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-10 text-center">
+                                                <div class="heading pb-4">
+                                                    <h2>Choose Your Package</h2>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="price-table">
+                                                    <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light">
+                                                        <h5 class="text-uppercase lis-latter-spacing-2">Basic</h5>
+                                                        <h1 class="display-4 lis-font-weight-500">1<small>%</small></h1>
+                                                        <p class="mb-0">Basic Membership</p>
+                                                    </div>
+                                                    <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                        <ul class="list-unstyled lis-line-height-3">
+
+
+                                                            <li>FairCover tokens in portfolio</li>
+                                                            @*<li>Minimum portfolio: $100,000</li>*@
+
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="price-table">
+                                                    <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light" style="background-color:#74aedb;">
+                                                        <h5 class="text-uppercase lis-latter-spacing-2">Silver</h5>
+                                                        <h1 class="display-4 lis-font-weight-500">1<small>%</small>- 5<small>%</small></h1>
+                                                        <p class="mb-0">Silver Membership</p>
+                                                    </div>
+                                                    <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                        <ul class="list-unstyled lis-line-height-3">
+
+
+
+                                                            <li>FairCover tokens in portfolio</li>
+                                                            <li>Minimum portfolio: $100,000</li>
+
+                                                        </ul>
+                                                        <a href="/userdashboard/create/" class="btn btn-primary-outline btn-md lis-rounded-circle-50" data-abc="true">Invest Now</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="price-table">
+                                                    <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light" style="background-color:#F3AF4C;">
+                                                        <h5 class="text-uppercase lis-latter-spacing-2">Gold</h5>
+                                                        <h1 class="display-4 lis-font-weight-500">6<small>%</small> - 12<small>%</small></h1>
+                                                        <p class="mb-0">Gold Membership</p>
+                                                    </div>
+                                                    <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                        <ul class="list-unstyled lis-line-height-3">
+
+
+                                                            <li>FairCover tokens in portfolio</li>
+                                                            <li>Minimum portfolio: $250,000</li>
+
+                                                        </ul>
+                                                        <a href="/userdashboard/create/" class="btn btn-primary-outline btn-md lis-rounded-circle-50" data-abc="true">Invest Now</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-3 wow fadeInUp mb-5 mb-lg-0 text-center" style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="price-table">
+                                                    <div class="price-header lis-bg-light lis-rounded-top py-4 border border-bottom-0 lis-brd-light" style="        background-color:#569B8C;">
+
+                                                        <h5 class="text-uppercase lis-latter-spacing-2">Platinum</h5>
+                                                        <h1 class="display-4 lis-font-weight-500">12<small>%</small>-20<small>%</small></h1>
+                                                        <p class="mb-0">Platinum Membership</p>
+                                                    </div>
+                                                    <div class="border border-top-0 lis-brd-light bg-white py-5 lis-rounded-bottom">
+                                                        <ul class="list-unstyled lis-line-height-3">
+
+
+                                                            <li>FairCover tokens in portfolio</li>
+                                                            <li>Minimum portfolio: $500,000</li>
+
+                                                        </ul>
+                                                        <a href="/userdashboard/create/" class="btn btn-primary-outline btn-md lis-rounded-circle-50" data-abc="true">Invest Now</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-lg-8">
+                    <!--<div class="token-information card card-full-height">
+        <div class="row no-gutters height-100">
+            <div class="col-md-6 text-center">
+                <div class="token-info">
+                    <img alt="logo-sm" class="token-info-icon" src="~/Content/themes/jur-theme/dist/images/logo-dotted.png">
+                    <div class="gaps-2x"></div>-->
+                    <!---->
+                    <!--<h1 class="token-info-head text-light">1 GNT = 0.09 USD</h1>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="token-info bdr-tl">
+                        <div>
+                            <ul class="token-info-list">
+                                <li><span>Token Name:</span>Gridnet</li>
+                                <li><span>Ticket Symbol:</span>GNT</li>
+                            </ul>
+                            <a class="btn btn-success" href="~/content/Gridnet_Whitepaper_Final.pdf" target="_blank">
+                                <em class="fas fa-download mr-3"></em>Download Whitepaper
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+                </div>
+                <div class="col-xl-8 col-lg-7">
+                    <div class="token-sale-graph card card-full-height" style="background-color:#ffffff; margin-top:55px;">
+                        <div class="card-innr">
+                            @*<div class="card-head has-aside">
+                        <h4 class="card-title">Token Price</h4>
+                    </div>*@
+                            <div class="chart-tokensale">
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+                                @if (Request.Browser.IsMobileDevice)
+                                {
+                                    <canvas id="myChart" width="70" height="40"></canvas>
+                                }
+                                else
+                                {
+                                    <canvas id="myChart" width="110" height="40"></canvas>
+                                }
+
+                                <script>
+                                    var options = {
+                                        series: [{
+                                            name: 'TEAM A',
+                                            type: 'column',
+                                            data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
+                                        }, {
+                                            name: 'TEAM B',
+                                            type: 'area',
+                                            data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
+                                        }, {
+                                            name: 'TEAM C',
+                                            type: 'line',
+                                            data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
+                                        }],
+                                        chart: {
+                                            height: 350,
+                                            type: 'line',
+                                            stacked: false,
+                                        },
+                                        stroke: {
+                                            width: [0, 2, 5],
+                                            curve: 'smooth'
+                                        },
+                                        plotOptions: {
+                                            bar: {
+                                                columnWidth: '50%'
+                                            }
+                                        },
+
+                                        fill: {
+                                            opacity: [0.85, 0.25, 1],
+                                            gradient: {
+                                                inverseColors: false,
+                                                shade: 'light',
+                                                type: "vertical",
+                                                opacityFrom: 0.85,
+                                                opacityTo: 0.55,
+                                                stops: [0, 100, 100, 100]
+                                            }
+                                        },
+                                        labels: ['01/01/2003', '02/01/2003', '03/01/2003', '04/01/2003', '05/01/2003', '06/01/2003', '07/01/2003',
+                                            '08/01/2003', '09/01/2003', '10/01/2003', '11/01/2003'
+                                        ],
+                                        markers: {
+                                            size: 0
+                                        },
+                                        xaxis: {
+                                            type: 'datetime'
+                                        },
+                                        yaxis: {
+                                            title: {
+                                                text: 'Points',
+                                            },
+                                            min: 0
+                                        },
+                                        tooltip: {
+                                            shared: true,
+                                            intersect: false,
+                                            y: {
+                                                formatter: function (y) {
+                                                    if (typeof y !== "undefined") {
+                                                        return y.toFixed(0) + " points";
+                                                    }
+                                                    return y;
+
+                                                }
+                                            }
+                                        }
+                                    };
+
+                                    var chart = new ApexCharts(document.querySelector("#myChart"), options);
+                                    chart.render();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-4 col-lg-5">
+                    <div class="token-calculator card card-full-height" style="margin-top: 55px;background-color:#569B8C;">
+                        <div class="card-innr">
+                            <div class="card-head">
+                                <h4 class="card-title" style="color:white;">Profit Calculator</h4>
+                                <p class="card-title-text" style="color:white;">Enter amount to calculate profits.</p>
+                            </div>
+                            <div class="token-calc">
+                                <div class="token-pay-amount">
+                                    <input class="input-bordered input-with-hint ng-pristine ng-valid ng-touched" id="btc-base-amount" type="text" value="0">
+                                    <div class="token-pay-currency">
+                                        <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                    </div>
+                                </div>
+                                <div class="token-received">
+                                    <div class="token-eq-sign">=</div>
+                                    <div class="token-received-amount"></div>
+                                </div>
+                                <div class="token-pay-amount">
+                                    <input class="input-bordered input-with-hint ng-untouched ng-pristine ng-valid" disabled id="token-base-amount" type="text" value="0">
+                                    <div class="token-pay-currency">
+                                        <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="token-buy"><a style="color:white;background-color:#2c80ff; border-color:#2c80ff;" class="btn btn-primary" href="~/userdashboard/create/">Buy Tokens</a></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @*    <div class="col-xl-4 col-lg-5">
+            <div class="token-sales card card-full-height">
+                <div class="card-innr">
+                    <div class="card-head">
+                        <h4 class="card-title text-center" style="color:#2c80ff">We are launching in:</h4>
+                    </div>
+                    <ul class="progress-info">
+                        <!---->
+                        <li><span>Raised</span> @Model.Raised.ToString("C2")</li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress-hcap" data-percent="98" style="width: 98%;">
+                            <!---->
+                            <div>Executive Sale<span>$80 ML</span></div>
+                        </div>
+                        <div class="progress-hcap" data-percent="50" style="width: 50%;">
+                            <!---->
+                            <div>VIP SALE<span>$30 ML</span></div>
+                        </div>
+                        <div class="progress-scap" data-percent="15" style="width: 15%;">
+                            <!---->
+                            <div>Exclusive Sale<span>$10 ML</span></div>
+                        </div>
+                        <div class="progress-percent" data-percent="5" style="width: @raised%;"></div>
+                    </div>
+                    <app-sale-starts _nghost-c4="">
+                        <span class="card-sub-title mgb-0-5x" style="font-size: 10px;">Public Exchange Trading: Waiting for listing</span>
+                        <!---->
+                        <div class="countdown-clock">
+                            <div><span class="countdown-time countdown-time-first" style="color:#2c80ff">00</span><span class="countdown-text">Day</span></div>
+                            <div><span class="countdown-time countdown-time-second" style="color:#2c80ff">00</span><span class="countdown-text">Hour</span></div>
+                            <div><span class="countdown-time countdown-time-third" style="color:#2c80ff">00</span><span class="countdown-text">Min</span></div>
+                            <div><span class="countdown-time countdown-time-last" style="color:#2c80ff">00</span><span class="countdown-text">Sec</span></div>
+                        </div>
+                    </app-sale-starts>
+                </div>
+            </div>
+        </div> *@
+            </div>
+            @*
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <div class="content-area card">
+                    <div class="card-innr">
+                        <div class="card-head">
+                            <h5 class="card-title card-title-md">Profit Packages</h5>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-5 col-lg-6">
+                                    <div class="pdb-1x">
+                                        <h1 class="schedule-title"><span class="">Gold</span><span class="badge badge-danger ucap badge-xs">Limited</span></h1>
+                                        <span>Available</span><span>from $200,000 </span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3 align-self-center text-xl-right"><span class="schedule-bonus ">50% Bonus</span></div>
+                                <div class="col-xl-3 col-md-3 align-self-center"><span class="schedule-bonus ">1500% Profit</span></div>
+                                <div class="col-xl-3 col-md-3 align-self-center text-xl-right"><a class="btn btn-primary btn-outline" href="~/userdashboard/create/">Invest Now <em class="ti ti-arrow-right"></em></a></div>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-5 col-lg-6">
+                                    <div class="pdb-1x">
+                                        <h1 class="schedule-title">
+                                            <span class="">Silver</span>
+                                        </h1><span>Available</span><span>from $100,000 </span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3 align-self-center text-xl-right"><span class="schedule-bonus ">30% Bonus</span></div>
+                                <div class="col-xl-3 col-md-3 align-self-center"><span class="schedule-bonus ">800% Profit</span></div>
+                                <div class="col-xl-3 col-md-3 align-self-center text-xl-right"><a class="btn btn-primary btn-outline" href="~/userdashboard/create/">Invest Now <em class="ti ti-arrow-right"></em></a></div>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-5 col-lg-6">
+                                    <div class="pdb-1x">
+                                        <h1 class="schedule-title"><span>Basic</span></h1><span>Your profile</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3 align-self-center text-xl-right"><span class="schedule-bonus">20% Bonus</span></div>
+                                <div class="col-xl-3 col-md-3 align-self-center"><span class="schedule-bonus">500% Profit</span></div>
+                                <div class="col-xl-3 col-md-3 align-self-center text-xl-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="token-calculator card card-full-height">
+                    <div class="card-innr">
+                        <div class="card-head">
+                            <h4 class="card-title">Profit Calculator</h4>
+                            <p class="card-title-text">Enter amount to calculate profits.</p>
+                        </div>
+                        <div class="token-calc">
+                            <div class="token-pay-amount">
+                                <input class="input-bordered input-with-hint ng-pristine ng-valid ng-touched" id="btc-base-amount" type="text" value="0">
+                                <div class="token-pay-currency">
+                                    <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                </div>
+                            </div>
+                            <div class="token-received">
+                                <div class="token-eq-sign">=</div>
+                                <div class="token-received-amount"></div>
+                            </div>
+                            <div class="token-pay-amount">
+                                <input class="input-bordered input-with-hint ng-untouched ng-pristine ng-valid" disabled id="token-base-amount" type="text" value="0">
+                                <div class="token-pay-currency">
+                                    <a class="link ucap link-light toggle-tigger" href="javascript:void(0)">$</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="token-buy"><a class="btn btn-primary" href="~/userdashboard/create/">Buy Tokens</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+            *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</app-dashboard>
+<style>
+
+    .box {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px
+    }
+
+    .our-services {
+        margin-top: 75px;
+        padding-bottom: 30px;
+        padding: 0 60px;
+        min-height: 198px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #fff;
+        transition: all .4s ease-in-out;
+        box-shadow: 0 0 25px 0 rgba(20, 27, 202, .17)
+    }
+
+        .our-services .icon {
+            margin-bottom: -21px;
+            transform: translateY(-50%);
+            text-align: center
+        }
+
+        .our-services:hover h4,
+        .our-services:hover p {
+            color: #fff
+        }
+
+    .speedup:hover {
+        box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+        cursor: pointer;
+        @*background-image: linear-gradient(-45deg, #fb0054 0%, #f55b2a 100%)*@
+        background-color: #ffcc49;
+        @*background-image: linear-gradient(to right top, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49, #ffcc49);*@
+    }
+
+    .settings:hover {
+        box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+        cursor: pointer;
+        @* background-image: linear-gradient(-45deg, #34b5bf 0%, #210c59 100%)*@
+        background-color: #3682d6;
+        @*background-image: linear-gradient(to right top, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff, #2c80ff);*@
+    }
+
+    .privacy:hover {
+        box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+        cursor: pointer;
+        @*background-image: linear-gradient(-45deg, #3615e7 0%, #44a2f6 100%)*@
+        background-color: #569B8C;
+        @* background-image: linear-gradient(to right top, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c, #149e6c);*@
+    }
+
+    .backups:hover {
+        box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+        cursor: pointer;
+        background-image: linear-gradient(-45deg, #fc6a0e 0%, #fdb642 100%)
+    }
+
+    .ssl:hover {
+        box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+        cursor: pointer;
+        background-image: linear-gradient(-45deg, #8d40fb 0%, #5a57fb 100%)
+    }
+
+    .database:hover {
+        box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+        cursor: pointer;
+        background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%)
+    }
+
+
+
+
+    .lis-bg-light {
+        background-color: #00000005
+    }
+
+    section {
+        padding-top: 6.25em;
+        padding-bottom: 6.25em;
+        position: relative
+    }
+
+    .pb-4,
+    .py-4 {
+        padding-bottom: 1.5rem !important
+    }
+
+    h2 {
+        font-size: 2rem
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #222222;
+        margin: 0 0 15px;
+        font-family: "Poppins", sans-serif;
+        line-height: 1.75rem
+    }
+
+    .lis-light {
+        color: #707070
+    }
+
+    .font-weight-normal {
+        font-weight: 400 !important
+    }
+
+    h5 {
+        font-size: 1.25rem
+    }
+
+    .price-table {
+        -webkit-transition: 0.3s ease
+    }
+
+    .lis-brd-light {
+        border-color: #dadada !important
+    }
+
+    .lis-rounded-top {
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px
+    }
+
+    .lis-bg-light {
+        background-color: #f7f7f7
+    }
+
+    .pb-4,
+    .py-4 {
+        padding-bottom: 1.5rem !important
+    }
+
+    .lis-latter-spacing-2 {
+        letter-spacing: 2px
+    }
+
+    .text-uppercase {
+        text-transform: uppercase !important
+    }
+
+    .lis-font-weight-500 {
+        font-weight: 500
+    }
+
+    .display-4 {
+        font-size: 3.5rem
+    }
+
+    .price-table sup {
+        top: -1.5em
+    }
+
+    .price-table sup,
+    .price-table small {
+        font-size: 1.25rem
+    }
+
+    .price-table small {
+        font-size: 1.25rem
+    }
+
+    .mb-0,
+    .my-0 {
+        margin-bottom: 0 !important
+    }
+
+    sup {
+        position: relative;
+        font-size: 75%;
+        line-height: 0
+    }
+
+    .lis-brd-light {
+        border-color: #dadada !important
+    }
+
+    .bg-white {
+        background-color: #fff !important
+    }
+
+    .py-5 {
+        padding-bottom: 3rem !important
+    }
+
+    .lis-line-height-3 {
+        line-height: 3 !important
+    }
+
+    .list-unstyled {
+        padding-left: 0;
+        list-style: none
+    }
+
+    .lis-line-height-3 {
+        line-height: 3 !important
+    }
+
+    .btn-primary-outline {
+        background-color: transparent;
+        color: #253992 !important;
+        border-color: #253992;
+    }
+
+    .btn {
+        color: #fff;
+        padding: .5rem 1.3rem;
+        font-size: 1rem;
+        word-wrap: break-word
+    }
+
+    .lis-rounded-circle-50 {
+        border-radius: 50px
+    }
+
+    .pl-2,
+    .px-2 {
+        padding-right: .5rem !important
+    }
+
+    .btn-primary-outline:hover,
+    .btn-primary-outline:focus {
+        background-color: #253992;
+        border-color: #253992;
+        color: #fff !important
+    }
+
+    .lis-bg-primary {
+        background-color: #ff214f
+    }
+
+    .btn-primary {
+        background-color: #ff214f;
+        border-color: #ff214f
+    }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #ff214f;
+            border-color: #ff214f
+        }
+
+    .price-table.active {
+        transform: scale(1.045);
+        -webkit-transform: scale(1.045)
+    }
+
+    .price-table {
+        -webkit-transition: 0.3s ease
+    }
+
+    .lis-rounded-bottom {
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px
+    }
+
+
+
+
+
+
+    #mySidenav a {
+        margin-top:20%;
+        position: absolute;
+        @*left: -80px;*@
+        left:0;
+        transition: 0.3s;
+        padding: 15px;
+        width: 150px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        border-radius: 0 5px 5px 0;
+    }
+
+        #mySidenav a:hover {
+            left: 0;
+        }
+
+    #about {
+        top: 20px;
+        background-color: #4CAF50;
+    }
+
+    #blog {
+        top: 80px;
+        background-color: #2196F3;
+    }
+
+    #projects {
+        top: 140px;
+        background-color: #f44336;
+    }
+
+    #contact {
+        top: 200px;
+        background-color: #555
+    }
+
+
+</style>
+
+@section Scripts {
+    <script>
+        var milion =@mil;
+
+        $("#btc-base-amount").on("keyup", function () {
+            var inputvalue = $(this).val()
+            values = inputvalue.replace('$', '').replace(',', '').replace('.', '');
+
+            //values = values * 12;
+
+            //TODO Raised from http://faircover-ico.com/dashboard/list/ ...
+            //var milion = 14;
+
+            if (milion < 15)
+                values = values * 10;
+            else if (milion > 15 && milion < 49)
+                values = values * 4;
+            else
+                values = values * 2;
+
+
+           // if (milion < 5)
+           //     values = values * 13;
+           //else if (milion < 40)
+           //     values = values * 7;
+           // else
+           //     values = values * 3.5;
+            //if (values < 10000)
+            //    values = values * 3.9;
+            //else if (values < 30000)
+            //    values = values * 5.5;
+            //else if (values < 60000)
+            //    values = values * 7.3;
+            //else if (values < 100000)
+            //    values = values * 9.6;
+            //else if (values < 250000)
+            //    values = values * 12.7;
+            //else
+            //    values = values * 19;
+
+            $("#token-base-amount").val(values);
+
+        })
+
+
+    </script>
+}
+

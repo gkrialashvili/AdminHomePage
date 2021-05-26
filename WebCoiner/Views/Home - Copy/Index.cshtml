@@ -1,0 +1,983 @@
+﻿@{
+    @model WebCoiner.GlobalDashboardList
+    //decimal currentpercentage = 23;
+    Console.WriteLine("STUFF");
+    double txRaised = (double)Model.Raised;
+    double raised = ((double)Model.Raised / 90000000) * 100;
+    long num = 0;
+    long.TryParse(txRaised.ToString(), out num);
+    String finalRaised = num.ToString("N0");
+
+    double percentage = ((double)Model.Raised / 90000000) * 100;
+    //155 = 10M
+    double finalRaisedDo = Convert.ToDouble(finalRaised);
+    Console.WriteLine("RAISED IS " + finalRaisedDo);
+    if (finalRaisedDo > 0 && finalRaisedDo <= 500000)
+    {
+        percentage = 5;
+    }
+    else if (finalRaisedDo > 500000 && finalRaisedDo <= 1000000)
+    {
+        percentage = 10;
+    }
+    else if (finalRaisedDo > 1000000 && finalRaisedDo <= 1500000)
+    {
+        percentage = 15;
+    }
+    else if (finalRaisedDo > 1500000 && finalRaisedDo <= 2000000)
+    {
+        percentage = 20;
+    }
+    else if (finalRaisedDo > 2000000 && finalRaisedDo <= 2500000)
+    {
+        percentage = 25;
+    }
+    else if (finalRaisedDo > 2500000 && finalRaisedDo <= 3000000)
+    {
+        percentage = 30;
+    }
+    else if (finalRaisedDo > 3000000 && finalRaisedDo <= 3500000)
+    {
+        percentage = 35;
+    }
+    else if (finalRaisedDo > 3000000 && finalRaisedDo <= 3500000)
+    {
+        percentage = 40;
+    }
+    else if (finalRaisedDo > 3000000 && finalRaisedDo <= 3500000)
+    {
+        percentage = 45;
+    }
+    else if (finalRaisedDo > 3500000 && finalRaisedDo <= 4000000)
+    {
+        percentage = 50;
+    }
+    else if (finalRaisedDo > 4000000 && finalRaisedDo <= 5000000)
+    {
+        percentage = 80;
+    }
+    else if (finalRaisedDo > 5000000 && finalRaisedDo <= 6000000)
+    {
+        percentage = 85;
+    }
+    else if (finalRaisedDo > 6000000 && finalRaisedDo <= 7000000)
+    {
+        percentage = 100;
+    }
+    else if (finalRaisedDo > 7000000 && finalRaisedDo <= 8000000)
+    {
+        percentage = 120;
+    }
+    else if (finalRaisedDo > 8000000 && finalRaisedDo <= 9000000)
+    {
+        percentage = 140;
+    }
+    else if (finalRaisedDo > 9000000 && finalRaisedDo <= 10000000)
+    {
+        percentage = 155;
+    }
+    else if (finalRaisedDo > 10000000 && finalRaisedDo <= 15000000)
+    {
+        percentage = 160;
+    }
+    else if (finalRaisedDo > 15000000 && finalRaisedDo <= 20000000)
+    {
+        percentage = 165;
+    }
+    else if (finalRaisedDo > 20000000 && finalRaisedDo <= 25000000)
+    {
+        percentage = 170;
+    }
+    else if (finalRaisedDo > 25000000 && finalRaisedDo <= 30000000)
+    {
+        percentage = 175;
+    }
+    else if (finalRaisedDo > 30000000 && finalRaisedDo <= 35000000)
+    {
+        percentage = 195;
+    }
+    else if (finalRaisedDo > 35000000 && finalRaisedDo < 40000000)
+    {
+        percentage = 200;
+    }
+    else if (finalRaisedDo >= 4000000 && finalRaisedDo <= 45000000)
+    {
+        percentage = 230;
+    }
+    else if (finalRaisedDo > 45000000 && finalRaisedDo <= 50000000)
+    {
+        percentage = 10;
+    }
+    else if (finalRaisedDo > 50000000 && finalRaisedDo <= 55000000)
+    {
+        percentage = 250;
+    }
+    else if (finalRaisedDo > 55000000 && finalRaisedDo <= 60000000)
+    {
+        percentage = 270;
+    }
+    else if (finalRaisedDo > 60000000 && finalRaisedDo <= 65000000)
+    {
+        percentage = 280;
+    }
+    else if (finalRaisedDo > 65000000 && finalRaisedDo <= 70000000)
+    {
+        percentage = 300;
+    }
+    else if (finalRaisedDo > 70000000 && finalRaisedDo <= 75000000)
+    {
+        percentage = 320;
+    }
+    else if (finalRaisedDo > 75000000 && finalRaisedDo < 80000000)
+    {
+        percentage = 325;
+    }
+    else if (finalRaisedDo >= 80000000 && finalRaisedDo <= 85000000)
+    {
+        percentage = 350;
+    }
+    @* else if (finalRaisedDo > 85000000 && finalRaisedDo <= 95000000)
+        {
+            percentage = 350;
+        }*@
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Faircover</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Blockchain scaling and interoperability">
+    <meta name="author" content="Faircover">
+    <meta name="generator" content="Hugo 0.57.2" />
+
+    <!-- plugins -->
+
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="plugins/fontawesome/font-awesome.min.css">
+
+
+    <!-- Main Stylesheet -->
+
+    <link rel="stylesheet" href="Content/mainpagestyle.min.css" media="screen">
+    <!-- <link rel="stylesheet" href="~/Content/ico/style.css" media="screen"> -->
+    <link rel="stylesheet" href="~/Content/counter.css" media="screen">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="~/assets/admin/source/5glogo.png" type="image/x-icon">
+    <link rel="icon" href="~/assets/admin/source/5glogo.png" type="image/x-icon">
+
+
+    <style>
+        .blackend {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .countdown {
+            top: 189px;
+            margin: 0 auto;
+            z-index: 10;
+            position: absolute;
+        }
+
+            .countdown .bloc-time {
+                float: left;
+                margin-right: 15px;
+                text-align: center;
+            }
+
+                .countdown .bloc-time:last-child {
+                    margin-right: 0;
+                }
+
+            .countdown .count-title {
+                display: block;
+                margin-bottom: 15px;
+                font: normal 0.94em "Lato";
+                color: #f7f7f7;
+                text-transform: uppercase;
+            }
+
+            .countdown .figure {
+                position: relative;
+                float: left;
+                height: 66px;
+                width: 55px;
+                margin-right: 2px;
+                background-color: #fff;
+                border-radius: 8px;
+                -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+                -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+                box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+            }
+
+                .countdown .figure:last-child {
+                    margin-right: 0;
+                }
+
+                .countdown .figure > span {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    font: normal 4em/65px "Lato";
+                    font-weight: 700;
+                    color: #bd2983;
+                }
+
+                .countdown .figure .top:after,
+                .countdown .figure .bottom-back:after {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                }
+
+                .countdown .figure .top {
+                    z-index: 3;
+                    background-color: #f7f7f7;
+                    transform-origin: 50% 100%;
+                    -webkit-transform-origin: 50% 100%;
+                    -moz-border-radius-topleft: 10px;
+                    -webkit-border-top-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                    -moz-border-radius-topright: 10px;
+                    -webkit-border-top-right-radius: 10px;
+                    border-top-right-radius: 10px;
+                    -moz-transform: perspective(200px);
+                    -ms-transform: perspective(200px);
+                    -webkit-transform: perspective(200px);
+                    transform: perspective(200px);
+                }
+
+                .countdown .figure .bottom {
+                    z-index: 1;
+                }
+
+                    .countdown .figure .bottom:before {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 50%;
+                        background-color: rgba(0, 0, 0, 0.02);
+                    }
+
+                .countdown .figure .bottom-back {
+                    z-index: 2;
+                    top: 0;
+                    height: 50%;
+                    overflow: hidden;
+                    background-color: #f7f7f7;
+                    -moz-border-radius-topleft: 10px;
+                    -webkit-border-top-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                    -moz-border-radius-topright: 10px;
+                    -webkit-border-top-right-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+
+                    .countdown .figure .bottom-back span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+
+                .countdown .figure .top,
+                .countdown .figure .top-back {
+                    height: 50%;
+                    overflow: hidden;
+                    -moz-backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                }
+
+                .countdown .figure .top-back {
+                    z-index: 4;
+                    bottom: 0;
+                    background-color: #fff;
+                    -webkit-transform-origin: 50% 0;
+                    transform-origin: 50% 0;
+                    -moz-transform: perspective(200px) rotateX(180deg);
+                    -ms-transform: perspective(200px) rotateX(180deg);
+                    -webkit-transform: perspective(200px) rotateX(180deg);
+                    transform: perspective(200px) rotateX(180deg);
+                    -moz-border-radius-bottomleft: 10px;
+                    -webkit-border-bottom-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    -moz-border-radius-bottomright: 10px;
+                    -webkit-border-bottom-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+
+                    .countdown .figure .top-back span {
+                        position: absolute;
+                        top: -100%;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+    </style>
+</head>
+<script>
+    @*if (location.protocol !== 'https:') {
+        location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }*@
+</script>
+<body style="background-color: #6919ff;">
+    <header class="navigation fixed-top" style="background-color: #26476E;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="/">
+                    @*<img src="images/RGB_Faircover-combined-white-transparent-194x55.png" height="60"*@
+                    <img src="~/Content/themes/jur-theme/dist/images/11111.png" height="60"
+                         alt="Faircover">
+                </a>
+                <button class="navbar-toggler text-white border-white" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="ti-menu"></i>
+                </button>
+
+                <div class="collapse navbar-collapse text-center" id="navigation">
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#service">Why Faircover</a>
+                        </li>
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#feature">Features</a>
+                        </li>
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#download">Downloads</a>
+                        </li>
+
+
+
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll" href="#sup">Support</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary" style="background-color:#395FA9;border-color:white;" href="account/login">Login</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <section class="banner" style="background-color:  #003e81;" id="banner">
+        <img src="images/banner/banner-overlay.png" class="banner-overlay" alt="overlay">
+        <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-left mb-5 mb-0">
+                    <h1 class="text-white pb-3">Blockchain for Efficient Healthcare</h1>
+                    <p class="text-white pb-5 opacity-5">Welcome to the future of blockchain Healthcare platform. FairCoVer is a revolutionary platform where secured data, information availability in real time and crowdfunding has never been more efficient, easy and decentralized before. With FairCoVer, any individual, company or state establishment will be able to participate, track and contribute in making the worldwide healthcare system more reliable, risk free, and most importantly, fair.</p>
+
+                    <a target="_blank" href="~/Content/5gprime_whitepaper.pdf" style="background-color:#395FA9;border-color:white;" class="btn btn-primary">Get The Whitepaper</a>
+                    <a href="account/register" style="background-color:#387889;" class="btn btn-success mr-sm-4 mb-4 mb-sm-0">Register</a>
+                </div>
+                <div class="col-md-4 text-center">
+
+
+
+                    <div class="token-sales card card-full-height">
+                        <div class="card-innr" >
+                            <div class="card-head">
+                                <h4 class="card-title text-center" style="color:white;">We are launching in:</h4>
+                            </div>
+                            <ul class="progress-info">
+                                <!---->
+                                <li style="color: #75ec67;"><span>Raised</span> @Model.Raised.ToString("C2")</li>
+                            </ul>
+                            <div class="progress-bar">
+                                <div class="progress-hcap" data-percent="98" style="width: 98%;">
+                                    <!---->
+                                    <div style="color:white;">Hardcap<span style="color:white;">$90 ML</span></div>
+                                </div>
+                                <div class="progress-hcap" data-percent="50" style="width: 56%;">
+                                    <!---->
+                                    <div style="color:white;">Softcap<span style="color:white;">$50 ML</span></div>
+                                </div>
+                                <div class="progress-scap" data-percent="25" style="width: 25%;">
+                                    <!---->
+                                    <div style="color:white;">Pre Sale<span style="color:white;">$15 ML</span></div>
+                                </div>
+
+                                <div class="progress-scap" data-percent="0" style="width: 0%;">
+                                    <!---->
+                                    <div style="color:white;">Private Sale<span style="color:white;"></span></div>
+                                </div>
+
+                                <div class="progress-percent" data-percent="5" style="width: @raised%;"></div>
+                            </div>
+                            <app-sale-starts _nghost-c4="">
+                                <span class="card-sub-title mgb-0-5x" style="font-size: 10px;color:white;">Public Exchange Trading: Waiting for listing</span>
+                                <!---->
+                                <div class="countdown-clock">
+                                    <div><span class="countdown-time countdown-time-first" style="color:white;">00</span><span class="countdown-text">Day</span></div>
+                                    <div><span class="countdown-time countdown-time-second" style="color:white;">00</span><span class="countdown-text">Hour</span></div>
+                                    <div><span class="countdown-time countdown-time-third" style="color:white;">00</span><span class="countdown-text">Min</span></div>
+                                    <div><span class="countdown-time countdown-time-last" style="color:white;">00</span><span class="countdown-text">Sec</span></div>
+                                </div>
+                            </app-sale-starts>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 px-lg-5 text-center text-md-left">
+                    <h2 class="mb-4" style="        color: black;">Information in real time</h2>
+                    <p style="        color: black;">At the heart of the Blockchain, it is a representation of a delegated system recording and saving the records of the transaction. Specifically, the Blockchain is a permanent record/file that relies on cryptographic structure in order to allow the participants to interact without preexisting trust among the parties.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="~/images/commands.png" alt="commands" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-0" id="service">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <i class="icon fa fa-lightbulb-o text-secondary mb-3"></i>
+                    <h2 class="mb-4" style="        color: black;">Blockchain Ecosystem Applicability in Healthcare</h2>
+                    <p class="mb-5" style="        color: black;"> Healthcare is considered one of the very fields where Blockchain has the greatest potential and ability to develop. Awaring the applicability of the Blockchain in the healthcare industry, in 2016, the ONC (Office of the National Coordinator) structured a conceptual challenge for requesting White Papers on the likely usage of the Blockchain technology in the healthcare system. This challenge gained a couple of suggested healthcare applications for the Blockchain.</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+                    <div class="card border-0 rounded-0 text-center text-sm-left card-hover-icon">
+                        <div style="background-color: #b7d6df;" class="card-body p-0">
+                            <i class="fa fa-sign-in icon text-secondary mb-3"></i>
+                            <h4 style="color: black;" class="h5 mb-4">Digital Medical Records</h4>
+                            <p style="color: black;">In order to change healthcare, the main focus should be assigned to the health data management that might be enhanced by the potential of connecting the heterogeneous systems and improve Digital Health Records (DHRs) exactness.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+                    <div class="card border-0 rounded-0 text-center text-sm-left card-hover-icon">
+                        <div style="        background-color: #b7d6df;" class="card-body p-0">
+                            <i class="fa Example of hourglass-end fa-hourglass-end icon text-secondary mb-3"></i>
+                            <h4 style="color:black;" class="h5 mb-4">Remote Patient Monitoring</h4>
+                            <p style="color:black;">In order to be able to monitor the status of the patient remotely, Remote Patient Monitoring (RPM) includes the medical information collection through mobile devices, sensors of body area and IoT (Internet of Things) gadgets. Thus, the Blockchain ecosystem plays a very important role in saving, storing, sharing and retrieving/reclaiming the biomedical information.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+                    <div class="card border-0 rounded-0 text-center text-sm-left card-hover-icon">
+                        <div style="        background-color: #b7d6df;" class="card-body p-0">
+                            <i class="fa fa-check-square icon text-secondary mb-3"></i>
+                            <h4 style="color:black;" class="h5 mb-4">Health Insurance Claims</h4>
+                            <p style="color:black;">Health Insurance Claims represents one of the very healthcare fields that can take advantage from stability, transparency and verifiability of the Blockchain ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+                        <div class="card border-0 rounded-0 text-center text-sm-left card-hover-icon">
+                            <div class="card-body p-0">
+                                <i class="fa fa-link icon text-secondary mb-3"></i>
+                                <h4 style="color:black;"class="h5 mb-4">Chain of Pharmaceutical Supply</h4>
+                                <p style="color:black;">One of the verified blockchain usage cases are represented in the pharmaceutical industry. Distribution of fake or inappropriate medications might cause crucial consequences for the patients. Blockchain ecosystem has been approved as having the highest capability of addressing this issue.</p>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section pb-0" id="feature">
+        <div class="container">
+
+
+            <div class="row align-items-center mb-100">
+                <div class="col-md-5 text-center mb-4 mb-md-0 text-md-left">
+                    @* <img src="images/cross-blockchain-scaling.jpg" alt="lock" class="img-fluid">*@
+                    <img src="images/banner/banner-bg-2.jpg" alt="lock" class="img-fluid">
+                </div>
+                <div class="col-md-7 text-center text-md-left">
+                    <h2 style="color:black;" class="mb-4">Early detection of epidemics</h2>
+                    <p style="color:black;">
+                        Detecting any epidemic in its early stage is vital to global healthcare, that carries huge importance for not only developing the proper drugs, treatments and vaccines, but for governments to also ensure the healthy livelihood of their countries. The latter is the direct contributor to economic stability and growth. Without controlling and preventing outbursts of pandemics, it would be impossible to maintain healthy social and economic balance among populations. By far, one of the greatest pandemic that has hit the economy hard, has been Covid-19, which shows that besides early detection, there are a number of actions to be taken, in order to avoid the collapse of relatively weaker economies.
+                        Smart Blockchain algorithm, integrated with google SEO (Search Engine Optimisation)  checks and constantly tracks google searches, as well as
+                        medical treatments for certain symptoms, that will detect potential epidemic or pandemic for the future.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center mb-100">
+                <div class="col-md-7 text-center text-md-left order-2 order-md-1">
+                    <h2 style="color:black;" class="mb-4">The use of the Blockchain by FairCoVer and organizations</h2>
+                    <p style="color:black;">The very first use of the Blockchain technology was represented by a Bitcoin (BTC), which is based on the blockchain ecosystem. But, the real-time use and applicability of the blockchain extended way far beyond cryptocurrencies, and the technology appears to, in time, have an effect on many industries.</p>
+                </div>
+                <div class="col-md-5 text-md-right text-center mb-4 mb-md-0 order-1 order-md-2">
+                    <img src="images/gridnet-foundation.jpeg" alt="bitmap" class="img-fluid">
+                </div>
+            </div>
+
+
+            <div class="row align-items-center mb-100">
+                <div class="col-md-5 text-center mb-4 mb-md-0 text-md-left">
+                    <img src="images/gridnet-use-cases.jpg" alt="lock" class="img-fluid">
+                </div>
+                <div class="col-md-7 text-center text-md-left">
+                    <h2 style="color:black;" class="mb-4">Formation of the FairCOVer future with Blockchain</h2>
+                    <p style="color:black;">FairCOVer generates unique abilities and opportunities in order to lower and reduce intricacy, facilitate trustless cooperation, and create secured and unalterable data. HHS is a way of tracking this fastly growing field in order to detect trends and the areas where the support from the government might be necessary to understand the full potential of the technology in real time. In order to form the future of the Blockchain, mapping and functionality of the ecosystem shall be formed by HHS, in addition, establish a framework for the blockchain system to organize and support alliances for discussion and research</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="section" id="download">
+        <div class="container" style="        background-color: #b7d6df !important;">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <i class="fa fa-bolt text-secondary icon mb-3"></i>
+                    <h2 style="color:black;" class="mb-4">Worldwide crowdfunding</h2>
+                    <p style="color:black;" class="mb-5">
+                        FairCoVer will offer a revolutionary platform for crowdfunding, solving existing flaws in the system. Companies, NGOs, governments and individuals, angel investors and anyone else will be able to fund the projects, development of various drugs/vaccines using Blockchain and smart contracts. Hence, global healthcare will be more fair, efficient and most importantly, decentralized, serving the interests of all, versus those of only a small group of countries or monopolistic companies.
+                        The Crowdfunding platform's usage to cover healthcare expenses is increasing rapidly within low, middle and high-earning countries as a new funding method in global health. The productivity of such “medical crowdfunding” is boosted by health disparities and gaps in medical coverage and social safety systems. In its current forms, Crowdfunding could be understood as an antithesis to universal health coverage. However, the study on medical crowdfunding, in particular, in global health conditions, has been unusual and gathering important data is difficult.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-12 mb-4">
+                    <div class="card shadow-sm rounded-0">
+                        <div class="card-border-top" style="border-top: 4px solid #9cd6c9;"></div>
+                        <div class="card-body p-4">
+                            <h4 class="card-title text-secondary">Download the Whitepaper</h4>
+                            <p class="card-text">Find out more about faircover by reading the original white paper.  Includes a detailed description of FairCover’s security architecture and our revolutionary patent-pending Data Availability Oracle.</p>
+
+                            <a target="_blank" href="~/Content/5gprime_whitepaper.pdf" class="btn btn-primary btn-sm">Get the Whitepaper</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container roadmap">
+
+            <div class="text-md-center roadmap-head">
+                <div class="px-5 py-3 rounded-xl bg-white d-inline-block position-relative zindex-1 mb-100 shadow-sm text-dark h5">ROADMAP</div>
+            </div>
+
+            <div class="row align-items-center roadmap-left mb-5">
+                <div class="col-md-6 pr-md-5 pl-5 pl-md-0 order-md-1 order-2">
+                    <div class="bg-white p-4 rounded-lg content shadow">
+                        <h3 class="mb-3">Blockchain testnet deployment</h3>
+
+                    </div>
+                </div>
+                <div class="col-md-6 pl-5 order-md-2 order-1">
+                    <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q2 2019</div>
+                </div>
+            </div>
+
+            <div class="row align-items-center roadmap-right mb-5">
+                <div class="col-md-6 pr-md-5 pl-5 pl-md-0 text-md-right">
+                    <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q3 2019</div>
+                </div>
+                <div class="col-md-6 pl-5">
+                    <div class="bg-white p-4 rounded-lg content shadow">
+                        <h3 class="mb-3">Blockchain mainnet deployment</h3>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center roadmap-left mb-5">
+                <div class="col-md-6 pr-md-5 pl-5 pl-md-0 order-md-1 order-2">
+                    <div class="bg-white p-4 rounded-lg content shadow">
+                        <h3 class="mb-3">Integrating shared global network</h3>
+
+                    </div>
+                </div>
+                <div class="col-md-6 pl-5 order-md-2 order-1">
+                    <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q4 2019</div>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center roadmap-right mb-5">
+                <div class="col-md-6 pr-md-5 pl-5 pl-md-0 text-md-right">
+                    <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q1 2020</div>
+                </div>
+                <div class="col-md-6 pl-5">
+                    <div class="bg-white p-4 rounded-lg content shadow">
+                        <h3 class="mb-3">Developing global data unification network</h3>
+                        (in progress)
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center roadmap-left mb-5">
+                <div class="col-md-6 pr-md-5 pl-5 pl-md-0 order-md-1 order-2">
+                    <div class="bg-white p-4 rounded-lg content shadow">
+                        <h3 class="mb-3">Integrating global digital medical records </h3>
+                        Supporting ETH and ERC20 tokens
+                    </div>
+                </div>
+                <div class="col-md-6 pl-5 order-md-2 order-1">
+                    <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q2 2020</div>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center roadmap-right mb-5">
+                <div class="col-md-6 pr-md-5 pl-5 pl-md-0 text-md-right">
+                    <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q3 2020</div>
+                </div>
+                <div class="col-md-6 pl-5">
+                    <div class="bg-white p-4 rounded-lg content shadow">
+                        <h3 class="mb-3">Application of Hash #160 protocol</h3>
+                        Deposits, payments, trades and withdrawals in Bitcoin
+                    </div>
+                </div>
+            </div>
+
+
+            @* <div class="row align-items-center roadmap-left mb-5">
+                    <div class="col-md-6 pr-md-5 pl-5 pl-md-0 order-md-1 order-2">
+                        <div class="bg-white p-4 rounded-lg content shadow">
+                            <h3 class="mb-3">gridnet on Libra</h3>
+                            (tentative)
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-5 order-md-2 order-1">
+                        <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q2 2020</div>
+                    </div>
+                </div>*@
+
+
+            <div class="row align-items-center roadmap-right mb-5">
+                <div class="col-md-6 pr-md-5 pl-5 pl-md-0 text-md-right">
+                    <div class="bg-white py-3 px-5 d-inline-block rounded-xl shadow-sm h5 mb-4 mb-md-0">Q1 2021</div>
+                </div>
+                <div class="col-md-6 pl-5">
+                    <div class="bg-white p-4 rounded-lg content shadow">
+                        <h3 class="mb-3">Interoperability</h3>
+                        Launching ICO project
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-md-center roadmap-end">
+                <div class="px-5 py-3 rounded-xl bg-white d-inline-block position-relative zindex-1 shadow-sm h5 mb-0">FUTURE</div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="sup">
+        <div class="container">
+            <div class="row mb-100">
+
+                <div class="col-lg-6 mx-auto text-center">
+                    <h2 class="text-white mb-4">Download the Whitepaper</h2>
+                    <a target="_blank" href="~/Content/5gprime_whitepaper.pdf" class="btn btn-primary mr-sm-4 mb-4 mb-sm-0">Get The Whitepaper</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-inline text-center mb-3">
+
+                        <li class="list-inline-item"><a href="#service" class="text-white p-3 d-block page-scroll">Why FairCover</a></li>
+
+                        <li class="list-inline-item"><a href="#feature" class="text-white p-3 d-block page-scroll">Features</a></li>
+
+                        <li class="list-inline-item"><a href="#download" class="text-white p-3 d-block page-scroll">Downloads</a></li>
+
+                    </ul>
+
+                    <p class="text-center text-white opacity-5">
+                        Copyright © 2020 - 2021 FairCoVer  &nbsp;&nbsp;  
+                        <a href="mailto:support@faircover-ico.com"> Contact Us: support@faircover-ico.com</a>
+                       
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- JS Plugins -->
+
+    <script src="plugins/jQuery/jquery.min.js"></script>
+
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="~/plugins/TweenMax.min.js"></script>
+
+    <script id="rendered-js">
+        // Create Countdown
+        var Countdown = {
+
+            // Backbone-like structure
+            $el: $('.countdown'),
+
+            // Params
+            countdown_interval: null,
+            total_seconds: 0,
+
+            // Initialize the countdown
+            init: function () {
+
+                // DOM
+                this.$ = {
+                    days: this.$el.find('.bloc-time.days .figure'),
+                    hours: this.$el.find('.bloc-time.hours .figure'),
+                    minutes: this.$el.find('.bloc-time.min .figure'),
+                    seconds: this.$el.find('.bloc-time.sec .figure')
+                };
+
+                var countDownDate = new Date("june 25, 2020 15:37:25").getTime();
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                //  Time calculations for days, hours, minutes and seconds
+                var days_se = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+                var hours_se = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                var minutes_se = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                var seconds_se = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                // Init countdown values
+                this.values = {
+                    days: days_se,
+                    hours: hours_se,
+                    minutes: minutes_se,
+                    seconds: seconds_se
+                };
+
+
+                // Initialize total seconds
+                this.total_seconds = this.values.hours * 60 * 60 + this.values.minutes * 60 + this.values.seconds;
+
+                // Animate countdown to the end
+                this.count();
+            },
+
+            count: function () {
+
+                var that = this,
+                    $days_1 = this.$.days.eq(0),
+                    $days_2 = this.$.days.eq(1),
+                    $days_3 = this.$.days.eq(2),
+                    $hour_1 = this.$.hours.eq(0),
+                    $hour_2 = this.$.hours.eq(1),
+                    $min_1 = this.$.minutes.eq(0),
+                    $min_2 = this.$.minutes.eq(1),
+                    $sec_1 = this.$.seconds.eq(0),
+                    $sec_2 = this.$.seconds.eq(1);
+
+                console.log(this.$.days)
+
+
+                this.countdown_interval = setInterval(function () {
+
+                    if (that.total_seconds > 0) {
+
+                        --that.values.seconds;
+
+                        if (that.values.minutes >= 0 && that.values.seconds < 0) {
+
+                            that.values.seconds = 59;
+                            --that.values.minutes;
+                        }
+
+                        if (that.values.hours >= 0 && that.values.minutes < 0) {
+
+                            that.values.minutes = 59;
+                            --that.values.hours;
+                        }
+
+
+                        // Update DOM values
+                        //Days
+                        that.checkHour(that.values.days, $days_1, $days_2, $days_3);
+
+                        // Hours
+                        that.checkHour(that.values.hours, $hour_1, $hour_2);
+
+                        // Minutes
+                        that.checkHour(that.values.minutes, $min_1, $min_2);
+
+                        // Seconds
+                        that.checkHour(that.values.seconds, $sec_1, $sec_2);
+
+                        --that.total_seconds;
+                    } else {
+                        clearInterval(that.countdown_interval);
+                    }
+                }, 1000);
+            },
+
+            animateFigure: function ($el, value) {
+
+                var that = this,
+                    $top = $el.find('.top'),
+                    $bottom = $el.find('.bottom'),
+                    $back_top = $el.find('.top-back'),
+                    $back_bottom = $el.find('.bottom-back');
+
+                // Before we begin, change the back value
+                $back_top.find('span').html(value);
+
+                // Also change the back bottom value
+                $back_bottom.find('span').html(value);
+
+                // Then animate
+                TweenMax.to($top, 0.8, {
+                    rotationX: '-180deg',
+                    transformPerspective: 300,
+                    ease: Quart.easeOut,
+                    onComplete: function () {
+
+                        $top.html(value);
+
+                        $bottom.html(value);
+
+                        TweenMax.set($top, { rotationX: 0 });
+                    }
+                });
+
+
+                TweenMax.to($back_top, 0.8, {
+                    rotationX: 0,
+                    transformPerspective: 300,
+                    ease: Quart.easeOut,
+                    clearProps: 'all'
+                });
+
+            },
+
+            checkHour: function (value, $el_1, $el_2, $el_3) {
+
+                var val_1 = value.toString().charAt(0);
+                var val_2 = value.toString().charAt(1);
+
+                if ($el_3 != null)
+                    var val_3 = value.toString().charAt(2);
+
+                var fig_1_value = $el_1.find('.top').html();
+                var fig_2_value = $el_2.find('.top').html();
+
+                if ($el_3 != null)
+                    var fig_3_value = $el_3.find('.top').html();
+
+                if (value >= 10) {
+
+                    // Animate only if the figure has changed
+                    if (fig_1_value !== val_1) this.animateFigure($el_1, val_1);
+                    if (fig_2_value !== val_2) this.animateFigure($el_2, val_2);
+
+                    if ($el_3 != null)
+                        if (fig_3_value !== val_3)
+                            this.animateFigure($el_3, val_3);
+
+                } else {
+
+                    // If we are under 10, replace first figure with 0
+                    if (fig_1_value !== '0') this.animateFigure($el_1, 0);
+                    if (fig_2_value !== val_1) this.animateFigure($el_2, val_1);
+                    if ($el_3 != null)
+                        if (fig_3_value !== val_1) this.animateFigure($el_2, val_1);
+                }
+            }
+        };
+
+
+        // Let's go !
+        Countdown.init();
+        //# sourceURL=pen.js
+    </script>
+    <script>
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("april 30, 2021 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            $('.countdown-time-first').html(days);
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            $('.countdown-time-second').html(hours);
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            $('.countdown-time-third').html(minutes);
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            $('.countdown-time-last').html(seconds);
+        }, 1000);
+    </script>
+</body>
+
+<!-- Mirrored from www.gridnet.io/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Jan 2020 09:46:58 GMT -->
+</html>
+

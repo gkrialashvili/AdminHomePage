@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{471D6DB1-F7FD-45D6-98E5-00AFF6702F99}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebCoiner</RootNamespace>
+    <AssemblyName>WebCoiner</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PromoCodesController.cs" />
+    <Compile Include="Controllers\TransactionsController.cs" />
+    <Compile Include="Controllers\UserDashboardController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalDashboardList.cs">
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\LogicController.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Helper.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="PromoCode.cs">
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Transaction.cs">
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebCoinerEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebCoinerEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebCoinerEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebCoinerEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebCoinerEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebCoinerEntity.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\admin\source\0999e5071bc0348f64a88fb78f0b1534.png" />
+    <Content Include="assets\admin\source\12c20ab21474c2601cd70ae380a32a46.png" />
+    <Content Include="assets\admin\source\17c82f9553e44f80bf489eb4f00cd21d.png" />
+    <Content Include="assets\admin\source\17e0f34a51f69c0ddaf5c11ba6708eb1.svg" />
+    <Content Include="assets\admin\source\23-512.png" />
+    <Content Include="assets\admin\source\2437edbdff0454c4cf153ec7366dcf44.png" />
+    <Content Include="assets\admin\source\5glogo.png" />
+    <Content Include="assets\admin\source\740fb7e79ac0bef83056df2a2b459a31.png" />
+    <Content Include="assets\admin\source\780f7d6182283e7315b076ada25d0a05.png" />
+    <Content Include="assets\admin\source\78ae4468b26ed83b4596842686e8e662.png" />
+    <Content Include="assets\admin\source\8cf1bd655a7c0b9eae707e3db3437c47.png" />
+    <Content Include="assets\admin\source\admin.js" />
+    <Content Include="assets\admin\source\anchor.html" />
+    <Content Include="assets\admin\source\api.js" />
+    <Content Include="assets\admin\source\b3fe99ab4fbf1c4fb2b853283096af82.png" />
+    <Content Include="assets\admin\source\balance.png" />
+    <Content Include="assets\admin\source\balance.svg" />
+    <Content Include="assets\admin\source\bframe.html" />
+    <Content Include="assets\admin\source\bootstrap.bundle.min.js" />
+    <Content Include="assets\admin\source\bootstrap.min.css" />
+    <Content Include="assets\admin\source\bundle.js" />
+    <Content Include="assets\admin\source\buy.png" />
+    <Content Include="assets\admin\source\c31b64f0018676ad77e5e37b4bf28795.png" />
+    <Content Include="assets\admin\source\current.png" />
+    <Content Include="assets\admin\source\d77aee66e3eb28bc6c80604d603c84e4.png" />
+    <Content Include="assets\admin\source\dba4f80a211c441d363dc3f36bdc590a.png" />
+    <Content Include="assets\admin\source\dce7dc2cde60051297c33af4ccf33715.svg" />
+    <Content Include="assets\admin\source\default.css" />
+    <Content Include="assets\admin\source\e0d536fd71a2703c08270d8340e57b4f.png" />
+    <Content Include="assets\admin\source\e39317d09f8a68c91b0d3545cb0b5d35.png" />
+    <Content Include="assets\admin\source\extractcssone.css" />
+    <Content Include="assets\admin\source\faircover-logo.png" />
+    <Content Include="assets\admin\source\faq.html" />
+    <Content Include="assets\admin\source\ico.png" />
+    <Content Include="assets\admin\source\inv.png" />
+    <Content Include="assets\admin\source\invesment.png" />
+    <Content Include="assets\admin\source\investment.png" />
+    <Content Include="assets\admin\source\investment.svg" />
+    <Content Include="assets\admin\source\jquery-3.5.1.slim.min.js" />
+    <Content Include="assets\admin\source\main.jpg" />
+    <Content Include="assets\admin\source\main.css" />
+    <Content Include="assets\admin\source\main.png" />
+    <Content Include="assets\admin\source\pack off.png" />
+    <Content Include="assets\admin\source\package.png" />
+    <Content Include="assets\admin\source\packoff.png" />
+    <Content Include="assets\admin\source\phMailer.html" />
+    <Content Include="assets\admin\source\profit.png" />
+    <Content Include="assets\admin\source\profit.svg" />
+    <Content Include="assets\admin\source\promo.png" />
+    <Content Include="assets\admin\source\proxima\font.css" />
+    <Content Include="assets\admin\source\proxima\ProximaNova-Bold.svg" />
+    <Content Include="assets\admin\source\recaptcha__en.js" />
+    <Content Include="assets\admin\source\saved_resource.html" />
+    <Content Include="assets\admin\source\style.css" />
+    <Content Include="assets\admin\source\styles__ltr.css" />
+    <Content Include="assets\admin\source\trans.png" />
+    <Content Include="assets\admin\source\vendor.css" />
+    <Content Include="assets\admin\source\wp.png" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\screens\1024.css" />
+    <Content Include="assets\css\screens\1280.css" />
+    <Content Include="assets\css\screens\1360.css" />
+    <Content Include="assets\css\screens\1600.css" />
+    <Content Include="assets\css\screens\1920.css" />
+    <Content Include="assets\css\screens\mobile.css" />
+    <Content Include="assets\css\screens\tablet.css" />
+    <Content Include="assets\css\vendor\bootstrap\bootstrap-col-1-5.css" />
+    <Content Include="assets\css\vendor\bootstrap\bootstrap-col-1-7.css" />
+    <Content Include="assets\css\vendor\bootstrap\bootstrap.min.css" />
+    <Content Include="assets\fonts\HKKontrastBold\HKKontrastBold.html" />
+    <Content Include="assets\fonts\HKKontrastBold\HKKontrastBold.svg" />
+    <Content Include="assets\fonts\HKKontrastBold\styles.css" />
+    <Content Include="assets\fonts\RobotoBold\RobotoBold.svg" />
+    <Content Include="assets\fonts\RobotoBold\styles.css" />
+    <Content Include="assets\fonts\RobotoLight\RobotoLight.html" />
+    <Content Include="assets\fonts\RobotoLight\RobotoLight.svg" />
+    <Content Include="assets\fonts\RobotoLight\styles.css" />
+    <Content Include="assets\fonts\RobotoMedium\RobotoMedium.html" />
+    <Content Include="assets\fonts\RobotoMedium\RobotoMedium.svg" />
+    <Content Include="assets\fonts\RobotoMedium\styles.css" />
+    <Content Include="assets\fonts\RobotoRegular\RobotoRegular.html" />
+    <Content Include="assets\fonts\RobotoRegular\RobotoRegular.svg" />
+    <Content Include="assets\fonts\RobotoRegular\styles.css" />
+    <Content Include="assets\home\about_img2.png" />
+    <Content Include="assets\home\analytics.js" />
+    <Content Include="assets\home\animate.css" />
+    <Content Include="assets\home\banner_bg2.png" />
+    <Content Include="assets\home\banner_img2.png" />
+    <Content Include="assets\home\bootstrap.min.css" />
+    <Content Include="assets\home\bootstrap.min.js" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.bundle.js" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.bundle.min.js" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.js" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.min.js" />
+    <Content Include="assets\home\counter.js" />
+    <Content Include="assets\home\cryptocoins.css" />
+    <Content Include="assets\home\eng.png" />
+    <Content Include="assets\home\fn.png" />
+    <Content Include="assets\home\font-awesome.min.css" />
+    <Content Include="assets\home\fonts.css" />
+    <Content Include="assets\home\footer_bg.png" />
+    <Content Include="assets\home\ionicons.min.css" />
+    <Content Include="assets\home\jquery-1.12.4.min.js" />
+    <Content Include="assets\home\jquery-3.6.0.min.js" />
+    <Content Include="assets\home\jquery.countdown.min.js" />
+    <Content Include="assets\home\jquery.counterup.min.js" />
+    <Content Include="assets\home\jquery.dd.min.js" />
+    <Content Include="assets\home\logo.png" />
+    <Content Include="assets\home\logo_dark.png" />
+    <Content Include="assets\home\magnific-popup.css" />
+    <Content Include="assets\home\magnific-popup.min.js" />
+    <Content Include="assets\home\main.css" />
+    <Content Include="assets\home\notification.js" />
+    <Content Include="assets\home\owl.carousel.min.css" />
+    <Content Include="assets\home\owl.carousel.min.js" />
+    <Content Include="assets\home\owl.theme.default.min.css" />
+    <Content Include="assets\home\parallax.js" />
+    <Content Include="assets\home\particles.min.js" />
+    <Content Include="assets\home\responsive.css" />
+    <Content Include="assets\home\roadmap.css" />
+    <Content Include="assets\home\sale-proceeds3.png" />
+    <Content Include="assets\home\scripts.js" />
+    <Content Include="assets\home\service_icon1.png" />
+    <Content Include="assets\home\service_icon2.png" />
+    <Content Include="assets\home\service_icon3.png" />
+    <Content Include="assets\home\service_icon4.png" />
+    <Content Include="assets\home\service_icon5.png" />
+    <Content Include="assets\home\service_icon6.png" />
+    <Content Include="assets\home\service_icon7.png" />
+    <Content Include="assets\home\service_icon8.png" />
+    <Content Include="assets\home\service_icon9.png" />
+    <Content Include="assets\home\spop.min.css" />
+    <Content Include="assets\home\style.css" />
+    <Content Include="assets\home\theme.css" />
+    <Content Include="assets\home\token_bg.png" />
+    <Content Include="assets\home\us.png" />
+    <Content Include="assets\home\waypoints.min.js" />
+    <Content Include="assets\images\about-img-2.png" />
+    <Content Include="assets\images\arrow-left.png" />
+    <Content Include="assets\images\arrow-right.png" />
+    <Content Include="assets\images\as-is-to-be-arrow.png" />
+    <Content Include="assets\images\bg.jpg" />
+    <Content Include="assets\images\bitcoin.svg" />
+    <Content Include="assets\images\down.png" />
+    <Content Include="assets\images\ecosystem-section-background.jpg" />
+    <Content Include="assets\images\ethereum.svg" />
+    <Content Include="assets\images\facebook-icon-colored.png" />
+    <Content Include="assets\images\form-close.png" />
+    <Content Include="assets\images\foto_gonzalo_garcia_pelayo.jpg" />
+    <Content Include="assets\images\icon-linkedin.png" />
+    <Content Include="assets\images\icon-medium.png" />
+    <Content Include="assets\images\icon-telegram.png" />
+    <Content Include="assets\images\icon-twitter.png" />
+    <Content Include="assets\images\ico_abierto_a_todos.png" />
+    <Content Include="assets\images\ico_blockchain.png" />
+    <Content Include="assets\images\ico_cobro_diario.png" />
+    <Content Include="assets\images\ico_equipo.png" />
+    <Content Include="assets\images\ico_experiencia.png" />
+    <Content Include="assets\images\ico_limitado.png" />
+    <Content Include="assets\images\ico_rentabilidad.png" />
+    <Content Include="assets\images\ico_tecnologia.png" />
+    <Content Include="assets\images\instagram-icon-colored.png" />
+    <Content Include="assets\images\iphone.png" />
+    <Content Include="assets\images\landscape-horizontal.png" />
+    <Content Include="assets\images\landscape-vertical.png" />
+    <Content Include="assets\images\linkedin-icon-colored.png" />
+    <Content Include="assets\images\LogIn.jpg" />
+    <Content Include="assets\images\logo-small.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\logo_cincodias.gif" />
+    <Content Include="assets\images\logo_elconfidencial.gif" />
+    <Content Include="assets\images\logo_eleconomista.gif" />
+    <Content Include="assets\images\logo_indice.gif" />
+    <Content Include="assets\images\logo_lainformacion.gif" />
+    <Content Include="assets\images\mccoin.png" />
+    <Content Include="assets\images\menu-burger-close.png" />
+    <Content Include="assets\images\menu-burger.png" />
+    <Content Include="assets\images\messenger-email.svg" />
+    <Content Include="assets\images\messenger-linkedin.svg" />
+    <Content Include="assets\images\messenger-skype.svg" />
+    <Content Include="assets\images\messenger-telegram.svg" />
+    <Content Include="assets\images\messenger-wechat.svg" />
+    <Content Include="assets\images\messenger-whatsapp.svg" />
+    <Content Include="assets\images\oilum_logo.png" />
+    <Content Include="assets\images\oilum_logo_small.png" />
+    <Content Include="assets\images\poster-pelayos.jpg" />
+    <Content Include="assets\images\prmind.jpg" />
+    <Content Include="assets\images\roadmap-dot-horizontal.png" />
+    <Content Include="assets\images\roadmap-dot-vertical.png" />
+    <Content Include="assets\images\scheme-as-is.png" />
+    <Content Include="assets\images\scheme-ecosystem.png" />
+    <Content Include="assets\images\scheme-to-be.png" />
+    <Content Include="assets\images\step-icon-1.png" />
+    <Content Include="assets\images\step-icon-2.png" />
+    <Content Include="assets\images\step-icon-3.png" />
+    <Content Include="assets\images\up-arrow.svg" />
+    <Content Include="assets\images\usage-1.png" />
+    <Content Include="assets\images\usage-2.png" />
+    <Content Include="assets\images\usage-3.png" />
+    <Content Include="assets\images\usage-4.png" />
+    <Content Include="assets\images\usage-5.png" />
+    <Content Include="assets\images\usage-6.png" />
+    <Content Include="assets\images\usage-7.png" />
+    <Content Include="assets\images\usage-8.png" />
+    <Content Include="assets\images\what-is-enod.png" />
+    <Content Include="assets\js\form-validation.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\vendor\aos\aos.js" />
+    <Content Include="assets\js\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="assets\js\vendor\particles.min.js" />
+    <Content Include="assets\login\logo.png" />
+    <Content Include="assets\login\style.css" />
+    <Content Include="assets\login\vendor.bundle.css" />
+    <Content Include="assets\style.css" />
+    <Content Include="Content\2019-03-27.png" />
+    <Content Include="Content\about_icon.png" />
+    <Content Include="Content\about_img10.png" />
+    <Content Include="Content\admin.css" />
+    <Content Include="Content\analytics.js" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\BC_Logo_.png" />
+    <Content Include="Content\bitcoin.svg" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\capRes\amb-logo.png" />
+    <Content Include="Content\capRes\app_bg-2.png" />
+    <Content Include="Content\capRes\flag-icon.min.css" />
+    <Content Include="Content\capRes\infoblock_bg.png" />
+    <Content Include="Content\capRes\jquery-2.2.4.min.js" />
+    <Content Include="Content\capRes\jquery.cookieBar.min.css" />
+    <Content Include="Content\capRes\main.min.css" />
+    <Content Include="Content\capRes\mainBg.jpg" />
+    <Content Include="Content\capRes\metroui.css" />
+    <Content Include="Content\capRes\noty.css" />
+    <Content Include="Content\capRes\noty.min.js" />
+    <Content Include="Content\capRes\operaciones_tiempo_real.jpg" />
+    <Content Include="Content\capRes\round-white-lg.svg" />
+    <Content Include="Content\capRes\scripts.min.js" />
+    <Content Include="Content\capRes\white-round-sm.svg" />
+    <Content Include="Content\chn_flage.png" />
+    <Content Include="Content\client_logo_dark_gray1.png" />
+    <Content Include="Content\client_logo_dark_gray2.png" />
+    <Content Include="Content\client_logo_dark_gray3.png" />
+    <Content Include="Content\client_logo_dark_gray4.png" />
+    <Content Include="Content\client_logo_dark_gray5.png" />
+    <Content Include="Content\client_logo_dark_gray6.png" />
+    <Content Include="Content\client_logo_dark_gray7.png" />
+    <Content Include="Content\client_logo_dark_gray8.png" />
+    <Content Include="Content\coinstore\graph_chart.png" />
+    <Content Include="Content\coinstore\logo-light-sm-bmk.png" />
+    <Content Include="Content\coinstore\logo-light-sm-btc.png" />
+    <Content Include="Content\coinstore\logo-light2x-bmk.png" />
+    <Content Include="Content\coinstore\logo-sm-bmk.png" />
+    <Content Include="Content\coinstore\style.css" />
+    <Content Include="Content\coinstore\vendor.bundle.css" />
+    <Content Include="Content\common.js" />
+    <Content Include="Content\controls.js" />
+    <Content Include="Content\counter.css" />
+    <Content Include="Content\counter.js" />
+    <Content Include="Content\credit-cartd.png" />
+    <Content Include="Content\distribution7.png" />
+    <Content Include="Content\eng.png" />
+    <Content Include="Content\eng_flage.png" />
+    <Content Include="Content\fn.png" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\footer_logo.png" />
+    <Content Include="Content\frn_flage.png" />
+    <Content Include="Content\google_white5.png" />
+    <Content Include="Content\graph.png" />
+    <Content Include="Content\ico\graph_chart.png" />
+    <Content Include="Content\ico\logo-light-sm-bmk.png" />
+    <Content Include="Content\ico\logo-light-sm-btc.png" />
+    <Content Include="Content\ico\logo-light-sm-dollar.png" />
+    <Content Include="Content\ico\logo-light2x-bmk.png" />
+    <Content Include="Content\ico\logo-sm-bmk.png" />
+    <Content Include="Content\ico\style.css" />
+    <Content Include="Content\ico\vendor.bundle.css" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\index.js" />
+    <Content Include="Content\index2.css" />
+    <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\jquery-1.12.4.min.js" />
+    <Content Include="Content\jquery.countdown.min.js" />
+    <Content Include="Content\jquery.counterup.min.js" />
+    <Content Include="Content\jquery.dd.min.js" />
+    <Content Include="Content\logo.png" />
+    <Content Include="Content\logo_ar.png" />
+    <Content Include="Content\logo_dark.png" />
+    <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\magnific-popup.min.js" />
+    <Content Include="Content\main.minnn.css" />
+    <Content Include="Content\mainpagestyle.min.css" />
+    <Content Include="Content\map.js" />
+    <Content Include="Content\marker.js" />
+    <Content Include="Content\marker.png" />
+    <Content Include="Content\mobile_app8.png" />
+    <Content Include="Content\modern_canvas.js" />
+    <Content Include="Content\notification.js" />
+    <Content Include="Content\oilum_logo_small.png" />
+    <Content Include="Content\onion.js" />
+    <Content Include="Content\owl.carousel.min.css" />
+    <Content Include="Content\owl.carousel.min.js" />
+    <Content Include="Content\owl.theme.default.min.css" />
+    <Content Include="Content\parallax.js" />
+    <Content Include="Content\particles.min.js" />
+    <Content Include="Content\popper.min.js" />
+    <Content Include="Content\responsive.css" />
+    <Content Include="Content\roadmap_bg4.png" />
+    <Content Include="Content\rus_flage.png" />
+    <Content Include="Content\sale-proceeds7.png" />
+    <Content Include="Content\saved_resource.html" />
+    <Content Include="Content\scripts.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\slider.css" />
+    <Content Include="Content\spop.min.css" />
+    <Content Include="Content\spop.min.js" />
+    <Content Include="Content\stats.js" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\team-lg-1.jpg" />
+    <Content Include="Content\team-lg-2.jpg" />
+    <Content Include="Content\team-lg-3.jpg" />
+    <Content Include="Content\team-lg-4.jpg" />
+    <Content Include="Content\team-lg-5.jpg" />
+    <Content Include="Content\team-lg-6.jpg" />
+    <Content Include="Content\team-lg-7.jpg" />
+    <Content Include="Content\team_img1.png" />
+    <Content Include="Content\team_img2.png" />
+    <Content Include="Content\team_img3.png" />
+    <Content Include="Content\team_img4.png" />
+    <Content Include="Content\team_img5.png" />
+    <Content Include="Content\team_img6.png" />
+    <Content Include="Content\team_img7.png" />
+    <Content Include="Content\theme.css" />
+    <Content Include="Content\themes\jur-theme\dist\css\theme.min.css" />
+    <Content Include="Content\themes\jur-theme\dist\images\111.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\11111.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\6NKPrhO.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\AgyneKA.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\balance.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\blockonomi.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\chart-bg.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\crypto-valley.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-arrow-down.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-arrow-up.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-1.gif" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-1.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-2.gif" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-2.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-3-m.gif" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-3-m.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-3.gif" />
+    <Content Include="Content\themes\jur-theme\dist\images\env-box-3.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\favicon.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\forbes.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\hackernoon.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico-wp.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico01.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico01.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico02.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico02.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico03.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico03.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico04.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\ico04.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\idnow.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\investment.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\KMbnpFF.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\lexpert-partners.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\loading.gif" />
+    <Content Include="Content\themes\jur-theme\dist\images\logo-amazix-long-white.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\logo-dotted.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\logo-dotted.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\logo-white.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\market-across.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\01.AlessandroPalombo.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\02.GiottoDeFilippi.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\03.LucaYesupathamDaniel.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\04.AdamDossa.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\05.IvanGranito.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\06.RaffaeleBattaglini.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\07.PiotrOjrzynski.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\08.LucaViviani.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\09.OmriOrr.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\12.ChrisConnelly.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\13.FilippoSchianoDiPepe.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\15.DavidOrban.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\16.EnricoFerro.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Briant.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Cannarsa.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Durovic.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Fabio.jpeg" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\FedericoSchianoDiPepe.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Janssen.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Jonas.jpeg" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Mielich.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\Nadav.jpeg" />
+    <Content Include="Content\themes\jur-theme\dist\images\members\PippoLi.jpg" />
+    <Content Include="Content\themes\jur-theme\dist\images\mll.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\net-bottom.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\net-top.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\news-btc.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\only-stars.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\package.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\pattern.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\planet.jpg" />
+    <Content Include="Content\themes\jur-theme\dist\images\profit.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\rascal.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\sph01.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\sph02.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\sph03.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\stars.svg" />
+    <Content Include="Content\themes\jur-theme\dist\images\vqf.png" />
+    <Content Include="Content\themes\jur-theme\dist\images\wave.svg" />
+    <Content Include="Content\themes\jur-theme\dist\js\theme.min.js" />
+    <Content Include="Content\themes\jur-theme\dist\videos\planet.webm" />
+    <Content Include="Content\uploads\2018\09\bitcoin.png" />
+    <Content Include="Content\uploads\2018\09\blockonomi.png" />
+    <Content Include="Content\uploads\2018\09\creditcard.png" />
+    <Content Include="Content\uploads\2018\09\creditcard2.png" />
+    <Content Include="Content\uploads\2018\09\crypto-valley.png" />
+    <Content Include="Content\uploads\2018\09\forbes.png" />
+    <Content Include="Content\uploads\2018\09\hackernoon.png" />
+    <Content Include="Content\uploads\2018\09\idnow.png" />
+    <Content Include="Content\uploads\2018\09\lexpert-partners.png" />
+    <Content Include="Content\uploads\2018\09\logo-amazix-long-white.png" />
+    <Content Include="Content\uploads\2018\09\market-across.png" />
+    <Content Include="Content\uploads\2018\09\mll.png" />
+    <Content Include="Content\uploads\2018\09\news-btc.png" />
+    <Content Include="Content\uploads\2018\09\rascal.png" />
+    <Content Include="Content\uploads\2018\09\visa-master.jpg" />
+    <Content Include="Content\uploads\2018\09\vqf.png" />
+    <Content Include="Content\us.png" />
+    <Content Include="Content\util.js" />
+    <Content Include="Content\waypoints.min.js" />
+    <Content Include="Content\wc_icon4.png" />
+    <Content Include="Content\wc_icon5.png" />
+    <Content Include="Content\wc_icon6.png" />
+    <Content Include="Content\whitepaper5.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="images\banner\banner-bg-2.jpg" />
+    <Content Include="images\banner\banner-overlay.png" />
+    <Content Include="images\banner\globe.png" />
+    <Content Include="images\commands.gif" />
+    <Content Include="images\commands.png" />
+    <Content Include="images\cross-blockchain-scaling.jpg" />
+    <Content Include="images\faircover_logo.png" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\gridnet-foundation.jpeg" />
+    <Content Include="images\gridnet-use-cases.jpg" />
+    <Content Include="images\RGB_gridnet-combined-white-transparent-194x55.png" />
+    <Content Include="plugins\bootstrap\bootstrap.min.css" />
+    <Content Include="plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="plugins\fontawesome\font-awesome.min.css" />
+    <Content Include="plugins\fontawesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="plugins\jQuery\jquery.min.js" />
+    <Content Include="plugins\TweenMax.min.js" />
+    <Content Include="Scripts\jqueryslider.js" />
+    <Content Include="Scripts\moto.js" />
+    <Content Include="Scripts\Slider.js" />
+    <Content Include="WebCoinerEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebCoinerEntity.edmx</DependentUpon>
+      <LastGenOutput>WebCoinerEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WebCoinerEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WebCoinerEntity.edmx</DependentUpon>
+      <LastGenOutput>WebCoinerEntity.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="assets\fonts\HKKontrastBold\HKKontrastBold.eot" />
+    <Content Include="assets\fonts\HKKontrastBold\HKKontrastBold.ttf" />
+    <Content Include="assets\fonts\HKKontrastBold\HKKontrastBold.woff" />
+    <Content Include="assets\fonts\RobotoBold\RobotoBold.eot" />
+    <Content Include="assets\fonts\RobotoBold\RobotoBold.ttf" />
+    <Content Include="assets\fonts\RobotoBold\RobotoBold.woff" />
+    <Content Include="assets\fonts\RobotoLight\RobotoLight.eot" />
+    <Content Include="assets\fonts\RobotoLight\RobotoLight.ttf" />
+    <Content Include="assets\fonts\RobotoLight\RobotoLight.woff" />
+    <Content Include="assets\fonts\RobotoMedium\RobotoMedium.eot" />
+    <Content Include="assets\fonts\RobotoMedium\RobotoMedium.ttf" />
+    <Content Include="assets\fonts\RobotoMedium\RobotoMedium.woff" />
+    <Content Include="assets\fonts\RobotoRegular\RobotoRegular.eot" />
+    <Content Include="assets\fonts\RobotoRegular\RobotoRegular.ttf" />
+    <Content Include="assets\fonts\RobotoRegular\RobotoRegular.woff" />
+    <Content Include="fonts\ionicons.woff2" />
+    <Content Include="Scripts\chart.js" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.bundle.js.map" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.bundle.min.js.map" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.js.map" />
+    <Content Include="assets\home\bootstrapJs\bootstrap.min.js.map" />
+    <Content Include="assets\admin\source\8wW9xOovFvb1Y4sOkj-W2AMqRzmlVgy1e6zY8RG7G1I.js.download" />
+    <Content Include="assets\admin\source\proxima\ProximaNova-Bold.eot" />
+    <Content Include="assets\admin\source\proxima\ProximaNova-Bold.ttf" />
+    <Content Include="assets\admin\source\proxima\ProximaNova-Bold.woff" />
+    <Content Include="assets\admin\source\proxima\ProximaNova-Bold.woff2" />
+    <Content Include="Content\bevr whitepaper.pdf" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\faircoverWhitepaper.pdf" />
+    <Content Include="Content\fontawesome-webfont.woff" />
+    <Content Include="Content\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\fonts\iKon.ttf" />
+    <Content Include="Content\fonts\iKon.woff" />
+    <Content Include="Content\fonts\Roboto-Bold.woff2" />
+    <Content Include="Content\fonts\Roboto-Medium.woff2" />
+    <Content Include="Content\fonts\Roboto-Regular.woff" />
+    <Content Include="Content\fonts\Roboto-Regular.woff2" />
+    <Content Include="Content\fonts\themify.ttf" />
+    <Content Include="Content\fonts\themify.woff" />
+    <Content Include="Content\Gridnet_Whitepaper_Final.pdf" />
+    <Content Include="Content\ionicons.woff" />
+    <Content Include="Content\js" />
+    <Content Include="Content\Oileum whitepaper.pdf" />
+    <Content Include="Content\ProMind_Legal.pdf" />
+    <Content Include="Content\ProMind_Whitepaper.pdf" />
+    <Content Include="Content\SyndiTech_WhitePaper.pdf" />
+    <Content Include="Content\themes\jur-theme\dist\images\icon" />
+    <Content Include="Content\themes\jur-theme\dist\json\voting-system-animation.json" />
+    <Content Include="Content\VERBAX lightpaper.pdf" />
+    <Content Include="plugins\fontawesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="plugins\fontawesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="plugins\fontawesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="plugins\fontawesome\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="plugins\fontawesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\5gprime_whitepaper.pdf" />
+    <Content Include="assets\login\jquery.bundle.js" />
+    <Content Include="assets\login\script.js" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Home\Terms.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <EntityDeploy Include="WebCoinerEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebCoinerEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="WebCoinerEntity.edmx.diagram">
+      <DependentUpon>WebCoinerEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Transactions\Create.cshtml" />
+    <Content Include="Views\Transactions\Delete.cshtml" />
+    <Content Include="Views\Transactions\Details.cshtml" />
+    <Content Include="Views\Transactions\Edit.cshtml" />
+    <Content Include="Views\Transactions\List.cshtml" />
+    <Content Include="Views\PromoCodes\Create.cshtml" />
+    <Content Include="Views\PromoCodes\Delete.cshtml" />
+    <Content Include="Views\PromoCodes\Details.cshtml" />
+    <Content Include="Views\PromoCodes\Edit.cshtml" />
+    <Content Include="Views\PromoCodes\List.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\List.cshtml" />
+    <Content Include="Views\Dashboard\Create.cshtml" />
+    <Content Include="Views\Dashboard\Delete.cshtml" />
+    <Content Include="Views\Dashboard\Details.cshtml" />
+    <Content Include="Views\Dashboard\Edit.cshtml" />
+    <Content Include="Views\Dashboard\List.cshtml" />
+    <Content Include="Views\UserDashboard\Create.cshtml" />
+    <Content Include="Views\UserDashboard\Details.cshtml" />
+    <Content Include="Views\UserDashboard\Edit.cshtml" />
+    <Content Include="Views\UserDashboard\List.cshtml" />
+    <Content Include="Views\UserDashboard\Delete.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\UserDashboard\Dashboard.cshtml" />
+    <Content Include="Views\Shared\getBalanceAsync.cshtml" />
+    <Content Include="Views\Home - Copy\Index.cshtml" />
+    <Content Include="Views\Home - Copy\Privacy.cshtml" />
+    <Content Include="Views\Home - Copy\Terms.cshtml" />
+    <Content Include="Views\UserDashboard\Dashboard - Copy.cshtml" />
+    <Content Include="Views\Account\Login - Copy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52836</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1457/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

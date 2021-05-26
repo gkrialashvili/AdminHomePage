@@ -1,0 +1,91 @@
+﻿@using WebCoiner.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+
+    string returnstring = "/userdashboard/dashboard/";
+    if (ViewBag.ReturnUrl != null)
+    {
+        returnstring = ViewBag.ReturnUrl;
+    }
+}
+
+<div class="container-fluid animation animated fadeInUp " style=" padding-right: 0; padding-left: 0;">
+    <div class="page-ath-wrap flex-row-reverse">
+        
+            <div class="page-ath-content">
+                <div class="page-ath-header">
+                    <a href="~/Views/Home/Index.cshtml" class="page-ath-logo">
+                        <img class="page-ath-logo-img" src="~/assets/admin/source/5glogo.png" alt="Kragx Sale">
+                    </a>
+                </div>
+                <div class="page-ath-form">
+                    <h2 class="page-ath-heading" style="color: #569B8C">
+                        Sign in<small>
+                        </small>
+                    </h2>
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = returnstring }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        <form class="login-form validate validate-modern" novalidate="novalidate">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group input-item">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="input-item text-left">
+                                    <input class="input-checkbox input-checkbox-md" type="checkbox" name="remember" id="remember-me">
+                                    <label for="remember-me">Remember Me</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </form>
+                    }
+
+
+                    <div class="gaps-4x"></div>
+                    <div class="form-note">
+                        Don’t have an account?  @Html.ActionLink("Register as a new user", "Register", null, new { @class = "btn-link" })
+                    </div>
+                </div>
+            </div>
+            <div class="page-ath-gfx" style="background-image: url(../../assets/images/LogIn.jpg);">
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="col-md-8 col-xl-5">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+
+<script>var base_url = "https://kragx.io/sale",
+        csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+        layouts_style = "modern";</script>
+<script src="~/assets/login/jquery.bundle.js"></script>
+<script src="~/assets/login/script.js"></script>
+<script type="text/javascript">jQuery(function(){
+            var $frv = jQuery('.validate');
+            if($frv.length > 0){ $frv.validate({ errorClass: "input-bordered-error error" }); }
+        });</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<style>
+    .footer-bar {
+        display: none !important;
+    }
+</style>

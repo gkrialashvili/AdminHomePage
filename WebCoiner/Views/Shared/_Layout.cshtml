@@ -1,0 +1,216 @@
+﻿@{
+    string controllerName = Request.CurrentExecutionFilePath;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>5G Prime</title>
+    <!--<base href="/">-->
+    <base href=".">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="~/assets/admin/source/5glogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.26.0/apexcharts.min.css" integrity="sha512-JQIBcZTDAWa1umaHZvCXqHC1xa4jU8NyTWFCV977oIcbcLFdqtRxgoNC1CEv3c9GJWdIj4Vs7jfhgDQSEkpMMQ==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="~/Content/ico/vendor.bundle.css" id="layoutstyle">
+    <link rel="stylesheet" href="~/Content/ico/style.css">
+    <link rel="stylesheet" href="~/assets/admin/source/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png/ico"
+          href="~/assets/admin/source/5glogo.png">
+    <link href="~/assets/admin/source/extractcssone.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/assets/login/vendor.bundle.css">
+    <link rel="stylesheet" href="~/assets/login/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/font-proxima-nova@1.0.1/index.min.js"></script>
+    <link rel="stylesheet" href="~/assets/admin/source/vendor.css">
+    <link rel="stylesheet" href="~/assets/admin/source/style.css">
+    <link rel="stylesheet" href="~/assets/admin/source/main.css">
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    @*<script src="~/Content/jquery-1.12.4.min.js"></script>*@
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <style>
+        .dropbtn {
+            background-image: url('https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/profle-512.png');
+            background-color: #3498DB;
+            color: white;
+            padding: 25px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #2980B9;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+
+
+
+
+        .btn-circlee {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 15px;
+        }
+
+            .btn-circlee.btn-lg {
+                width: 50px;
+                height: 50px;
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.33;
+                border-radius: 25px;
+            }
+
+            .btn-circlee.btn-xl {
+                width: 70px;
+                height: 70px;
+                padding: 10px 16px;
+                font-size: 24px;
+                line-height: 1.33;
+                border-radius: 35px;
+            }
+    </style>
+</head>
+
+<body class="no-touch">
+    <app-root>
+        <app-profile>
+            @RenderBody()
+            <div class="footer-bar" style="background-color: #0b315e
+">
+                <div class="container-fluid" style="padding: 15px 0;">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <iframe src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A78%2C%22utm_source%22%3A%22www.tradingview.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D" height="40px" width="100%"></iframe>
+                    }
+                </div>
+                <div class="container">
+
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-4 mt-2 mt-sm-0">
+                            <div class="d-flex justify-content-between justify-content-md-end align-items-center guttar-25px pdt-0-5x pdb-0-5x">
+                                <p class="text-center text-white opacity-5" style="display: flex">
+                                    Copyright © 2020 - 2021 5G Prime  &nbsp;&nbsp;
+                                    <a href="mailto:support@faircover.com Primer-ico.com"> Contact Us: support@5gprime-ico.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </app-profile>
+    </app-root>
+
+    @RenderSection("scripts", required: false)
+
+
+    <script>
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("june 25, 2020 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            $('.countdown-time-first').html(days);
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            $('.countdown-time-second').html(hours);
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            $('.countdown-time-third').html(minutes);
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            $('.countdown-time-last').html(seconds);
+        }, 1000);
+    </script>
+    <script type="text/javascript">
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+
+       /* $(window).on(function () {
+            $("#togglemenu").click(function () {
+                myFunction();
+            });
+        }); */
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        document.getElementById('togglemenu').addEventListener('click', function (e) {
+            document.getElementById("myDropdown").classList.toggle("show");
+            alert("AEEEE");
+        });
+
+       
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
