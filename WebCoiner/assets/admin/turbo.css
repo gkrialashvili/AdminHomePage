@@ -5625,6 +5625,10 @@ h6, .h6 {
   color: #222222;
   text-decoration: none; }
 
+.nav {
+    flex-direction: column !important
+}
+
 .card-blog .card-title {
   font-weight: 700; }
 
