@@ -104,6 +104,12 @@
 .c-black {
   color: #000000 !important; }
 
+.navigation-class li a {
+    display: flex;
+    flex-direction: row;
+}
+
+
 .c-white {
   color: #ffffff !important; }
 

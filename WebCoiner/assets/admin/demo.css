@@ -58,11 +58,16 @@
 }
 
 
+.navigation-class li a {
+    display: flex;
+    flex-direction: row;
+}
+
 
 
 
 .fixed-plugin li > a,
-.fixed-plugin .badge{
+.fixed-plugin .badge {
     transition: all .34s;
     -webkit-transition: all .34s;
     -moz-transition: all .34s;
