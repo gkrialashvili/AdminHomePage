@@ -360,6 +360,15 @@ p a {
     z-index: 1099
 }
 
+.token-pay-currencys {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    transform: translate(0);
+    z-index: 1;
+    padding: 0 45px;
+}
+
 .has-timepicker .time-picker:focus {
     border-radius: 4px 4px 0 0
 }
@@ -2423,51 +2432,53 @@ div.dataTables_wrapper div.dataTables_paginate {
     position: relative
 }
 
-.input-bordered {
-    border-radius: 4px;
-    border: 1px solid #d2dde9;
-    width: 100%;
-    padding: 10px 15px;
-    line-height: 20px;
-    font-size: .9em;
-    color: rgba(73,84,99,0.7);
-    transition: all .4s
+.input-bordereds {
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    outline-offset: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 1px;
+    padding: 3px 10px;
 }
 
-    .input-bordered::-webkit-input-placeholder {
+    .input-bordereds::-webkit-input-placeholder {
         color: #758698
     }
 
-    .input-bordered::-moz-placeholder {
+    .input-bordereds::-moz-placeholder {
         color: #758698
     }
 
-    .input-bordered:-ms-input-placeholder {
+    .input-bordereds:-ms-input-placeholder {
         color: #758698
     }
 
-    .input-bordered:-moz-placeholder {
+    .input-bordereds:-moz-placeholder {
         color: #758698
     }
 
-    .input-bordered:focus {
+    .input-bordereds:focus {
         box-shadow: none;
         outline: none;
         border-color: #b1becc
     }
 
-    .input-bordered:disabled {
+    .input-bordereds:disabled {
         background: rgba(230,239,251,0.2)
     }
 
-    .input-bordered ~ .error {
+    .input-bordereds ~ .error {
         color: #ff6868;
         margin-bottom: 0;
         position: relative;
         top: 7px
     }
 
-.validate-modern .input-bordered ~ .error {
+.validate-modern .input-bordereds ~ .error {
     position: absolute;
     right: -10px;
     top: -15px;
@@ -2479,7 +2490,7 @@ div.dataTables_wrapper div.dataTables_paginate {
     border-radius: 2px
 }
 
-    .validate-modern .input-bordered ~ .error:after {
+    .validate-modern .input-bordereds ~ .error:after {
         position: absolute;
         content: '';
         height: 0;
@@ -3016,7 +3027,7 @@ div.dataTables_wrapper div.dataTables_paginate {
     left: 15px
 }
 
-    .input-icon-left ~ .input-solid, .input-icon-left + .input-bordered {
+    .input-icon-left ~ .input-solid, .input-icon-left + .input-bordereds {
         padding-left: 35px
     }
 
@@ -3025,7 +3036,7 @@ div.dataTables_wrapper div.dataTables_paginate {
     left: auto
 }
 
-    .input-icon-right ~ .input-solid, .input-icon-right + .input-bordered {
+    .input-icon-right ~ .input-solid, .input-icon-right + .input-bordereds {
         padding-right: 30px
     }
 
@@ -3044,7 +3055,7 @@ div.dataTables_wrapper div.dataTables_paginate {
         left: 20px
     }
 
-    .input-icon-left ~ .input-solid, .input-icon-left + .input-bordered {
+    .input-icon-left ~ .input-solid, .input-icon-left + .input-bordereds {
         padding-left: 50px
     }
 
@@ -3053,11 +3064,11 @@ div.dataTables_wrapper div.dataTables_paginate {
         left: auto
     }
 
-        .input-icon-right ~ .input-solid, .input-icon-right + .input-bordered {
+        .input-icon-right ~ .input-solid, .input-icon-right + .input-bordereds {
             padding-right: 50px
         }
 
-    .input-bordered ~ .error, .input-solid ~ .error, .input-checkbox ~ .error, .input-radio ~ .error {
+    .input-bordereds ~ .error, .input-solid ~ .error, .input-checkbox ~ .error, .input-radio ~ .error {
         font-size: 12px
     }
 }
@@ -6693,31 +6704,32 @@ select {
 
 .token-calc {
     display: flex;
-    padding-bottom: 10px
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.token-pay-amount {
-    position: relative;
-    align-self: center;
-    width: 180px
-}
-
-.token-pay-currency {
+.token-pay-currencys {
     position: absolute;
     right: 0;
-    top: 9px;
+    top: 2px;
     transform: translate(0);
     z-index: 1;
-    padding: 0 10px;
-    border-left: 1px solid #d2dde9
+    padding: 0 45px;
 }
 
-    .token-pay-currency .input-hint {
+.token-pay-amounts {
+    position: relative;
+    align-self: center;
+    width: 70% !important;
+}
+
+.token-pay-currency .input-hint {
         position: static;
         border: 0;
         padding: 2px;
         font-size: .8em
-    }
+ }
 
 .token-received {
     display: inline-flex;
