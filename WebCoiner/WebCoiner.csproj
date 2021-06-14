@@ -304,6 +304,7 @@
     <Content Include="assets\home\cb70d11b8.js" />
     <Content Include="assets\home\Chainlink-Logo-White-300x92.png" />
     <Content Include="assets\home\core.js" />
+    <Content Include="assets\home\countdown.js" />
     <Content Include="assets\home\css.css" />
     <Content Include="assets\home\dialog.js" />
     <Content Include="assets\home\Didi-Taihuttu-sm.jpg" />
@@ -365,6 +366,8 @@
     <Content Include="assets\home\share-link.js" />
     <Content Include="assets\home\solid.css" />
     <Content Include="assets\home\style.css" />
+    <Content Include="assets\home\counter.css" />
+    <Content Include="assets\home\StyleSheet1.css" />
     <Content Include="assets\home\style_002.css" />
     <Content Include="assets\home\swiper.js" />
     <Content Include="assets\home\theme.css" />
