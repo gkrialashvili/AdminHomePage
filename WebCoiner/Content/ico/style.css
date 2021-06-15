@@ -2434,37 +2434,37 @@ div.dataTables_wrapper div.dataTables_paginate {
 
 .input-bordereds {
     background-color: transparent;
-    color: #eeeeee;
+    color: #000;
     outline: none;
     outline-style: none;
     outline-offset: 0;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: solid #eeeeee 1px;
+    border-bottom: solid #000 1px;
     padding: 3px 10px;
 }
 
     .input-bordereds::-webkit-input-placeholder {
-        color: #758698
+        color: #000
     }
 
     .input-bordereds::-moz-placeholder {
-        color: #758698
+        color: #000
     }
 
     .input-bordereds:-ms-input-placeholder {
-        color: #758698
+        color: #000
     }
 
     .input-bordereds:-moz-placeholder {
-        color: #758698
+        color: #000
     }
 
     .input-bordereds:focus {
         box-shadow: none;
         outline: none;
-        border-color: #b1becc
+        border-color: #000
     }
 
     .input-bordereds:disabled {
