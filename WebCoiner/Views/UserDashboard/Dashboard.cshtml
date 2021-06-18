@@ -39,7 +39,7 @@
         <div class="sidebar">
             <div class="logo">
                 <a href="#" class="simple-text">
-                  <img src="~/assets/home/icon.png" />
+                  <img style="max-width: 150px;" src="~/assets/home/icon.png" />
                 </a>
             </div>
             <div class="logo logo-mini">
@@ -50,45 +50,45 @@
             <div class="sidebar-wrapper ps-container ps-theme-default ps-active-y"
                  data-ps-id="74a2a057-0a09-94c6-3caf-4a89192d0081">
                 <ul class="nav navigation-class">
-                    <li class="active">
+                    <li class="">
                         <a href="/dashboard/list/">
-                            <i class="material-icons">dashboard</i>
+                            <img src="~/assets/admin/diamond.svg" />
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="">
                         <a href="/transactions/list/">
-                            <i class="material-icons">dashboard</i>
+                            <img src="~/assets/admin/transaction.svg" />
                             <p>Transactions</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="">
                         <a href="/users/list/">
-                            <i class="material-icons">dashboard</i>
+                            <img src="~/assets/admin/user.svg" />
                             <p>Users</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="">
                         <a href="/promocodes/list/">
-                            <i class="material-icons">dashboard</i>
+                            <img src="~/assets/admin/promotion.svg" />
                             <p>Promocodes</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="">
                         <a href="/manage/index/">
-                            <i class="material-icons">dashboard</i>
+                            <img src="~/assets/admin/profile.svg" />
                             <p>Profile</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="">
                         <a href="/userdashboard/create/">
-                            <i class="material-icons">dashboard</i>
+                            <img src="~/assets/admin/buy.svg" />
                             <p>Buy Tokens</p>
                         </a>
                     </li>
                     <li>
                         <a href="/dashboard/list/">
-                            <i class="material-icons">library_books</i>
+                         <img src="~/assets/admin/documentation.svg" />
                             <p>Documentation</p>
                         </a>
                     </li>
@@ -181,13 +181,13 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
-                                    <div class="icon icon-warning">
-                                        <i class="zmdi zmdi-equalizer"></i>
+                                    <div class="package-img">
+                                        <img src="~/assets/admin/investment.svg">
                                     </div>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <p class="category"><strong>Visits</strong></p>
+                                        <p class="category"><strong>Your Invesment</strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -195,36 +195,36 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
-                                    <div class="icon icon-rose">
-                                        <i class="zmdi zmdi-shopping-cart"></i>
+                                    <div class="package-img">
+                                        <img src="~/assets/admin/balance.svg">
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="category"><strong>Orders</strong></p>
+                                    <p class="category"><strong>Total Balance</strong></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
-                                    <div class="icon icon-success">
-                                        <i class="zmdi zmdi-money"></i>
+                                    <div class="package-img">
+                                        <img src="~/assets/admin/profit.svg">
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="category"><strong>Revenue</strong></p>
+                                    <p class="category"><strong>Profits</strong></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
-                                    <div class="icon icon-info">
-                                        <i class="zmdi zmdi-twitter"></i>
+                                    <div class="package-img">
+                                        <img src="~/assets/admin/diamond.svg">
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="category"><strong>Followers</strong></p>
+                                    <p class="category"><strong>Token Amount</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -479,6 +479,29 @@
         align-items: center;
         justify-content: center;
         background-color: transparent;
+    }
+    
+    a img {
+        max-width: 25px;
+        margin-right: 10px;
+    }
+
+    .package-img {
+        background: #fff;
+        border-radius: 50%;
+        padding-top: 5px;
+        width: 70px;
+        margin: 0 auto 20px;
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card img {
+        width: 35px;
+        height: auto;
     }
 
 </style>

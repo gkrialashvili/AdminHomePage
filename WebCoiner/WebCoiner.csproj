@@ -216,11 +216,13 @@
   <ItemGroup>
     <Content Include="assets\admin\a.htm" />
     <Content Include="assets\admin\AU.png" />
+    <Content Include="assets\admin\balance.svg" />
     <Content Include="assets\admin\bootstrap-datetimepicker.js" />
     <Content Include="assets\admin\bootstrap-notify.js" />
     <Content Include="assets\admin\bootstrap.css" />
     <Content Include="assets\admin\bootstrap.js" />
     <Content Include="assets\admin\BR.png" />
+    <Content Include="assets\admin\buy.svg" />
     <Content Include="assets\admin\Chart.js" />
     <Content Include="assets\admin\chartjs-charts.js" />
     <Content Include="assets\admin\common.js" />
@@ -228,10 +230,13 @@
     <Content Include="assets\admin\DE.png" />
     <Content Include="assets\admin\demo.css" />
     <Content Include="assets\admin\demo.js" />
+    <Content Include="assets\admin\diamond.svg" />
+    <Content Include="assets\admin\documentation.svg" />
     <Content Include="assets\admin\flot-charts.js" />
     <Content Include="assets\admin\font-awesome.css" />
     <Content Include="assets\admin\fullcalendar.js" />
     <Content Include="assets\admin\GB.png" />
+    <Content Include="assets\admin\investment.svg" />
     <Content Include="assets\admin\jasny-bootstrap.js" />
     <Content Include="assets\admin\jquery-3.js" />
     <Content Include="assets\admin\jquery-jvectormap.js" />
@@ -251,11 +256,16 @@
     <Content Include="assets\admin\moment.js" />
     <Content Include="assets\admin\nouislider.js" />
     <Content Include="assets\admin\perfect-scrollbar.js" />
+    <Content Include="assets\admin\profile.svg" />
+    <Content Include="assets\admin\profit.svg" />
+    <Content Include="assets\admin\promotion.svg" />
     <Content Include="assets\admin\RO.png" />
     <Content Include="assets\admin\sweetalert2.js" />
+    <Content Include="assets\admin\transaction.svg" />
     <Content Include="assets\admin\turbo.css" />
     <Content Include="assets\admin\turbo.js" />
     <Content Include="assets\admin\US.png" />
+    <Content Include="assets\admin\user.svg" />
     <Content Include="assets\admin\util.js" />
     <Content Include="assets\css\main.css" />
     <Content Include="assets\css\screens\1024.css" />
