@@ -337,6 +337,8 @@
     <Content Include="assets\home\Gabriel-Martinez.jpg" />
     <Content Include="assets\home\garlam-won.jpg" />
     <Content Include="assets\home\global.css" />
+    <Content Include="assets\home\HomeIcon.png" />
+    <Content Include="assets\home\icc.png" />
     <Content Include="assets\home\icon.png" />
     <Content Include="assets\home\Ivan-on-Tech-Liljeqvist-sm.jpg" />
     <Content Include="assets\home\Joel-Kovshoff-sm.jpg" />
