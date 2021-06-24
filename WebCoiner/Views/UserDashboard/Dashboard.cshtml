@@ -103,9 +103,7 @@ c
                             using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "" }))
                             {
                                 @Html.AntiForgeryToken()
-                                <button type="button" class="btn btn-warning" data-toggle="collapse">
-                                    <a href="javascript:document.getElementById('logoutForm').submit()" style="color: #fff">LOGOUT</a>
-                                </button>
+                        <div class="LogOutButton"><a href="javascript:document.getElementById('logoutForm').submit()" style="color: #fff">LOGOUT</a></div>
                             }
                         }
 
@@ -211,7 +209,7 @@ c
                             <div class="card card-stats">
                                 <div class="card-header">
                                     <div class="package-img">
-                                        <img src="~/assets/admin/diamond.svg">
+                                        <img src="~/assets/admin/tokens.svg">
                                     </div>
                                 </div>
                                 <div class="card-footer">

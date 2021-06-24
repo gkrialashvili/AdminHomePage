@@ -9,18 +9,83 @@
 
 
     <div class="container animation animated fadeInUp">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="/transactions/list/" class="simple-text">
+                    <img style="max-width: 150px;" src="/assets/home/icon.png">
+                </a>
+            </div>
+            <div class="logo logo-mini">
+                <a href="#" class="simple-text">
+                    <img src="/assets/home/icon.png">
+                </a>
+            </div>
+            <div class="sidebar-wrapper ps-container ps-theme-default ps-active-y ps-active-x" data-ps-id="5e74ba75-ab95-a043-9201-fc6e654dfcc3">
+                <ul class="nav navigation-class">
+                    <li class="">
+                        <a href="/dashboard/list/">
+                            <img src="/assets/admin/diamond.svg">
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/transactions/list/">
+                            <img src="/assets/admin/transaction.svg">
+                            <p>Transactions</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/users/list/">
+                            <img src="/assets/admin/user.svg">
+                            <p>Users</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/promocodes/list/">
+                            <img src="/assets/admin/promotion.svg">
+                            <p>Promocodes</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/manage/index/">
+                            <img src="/assets/admin/profile.svg">
+                            <p>Profile</p>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/userdashboard/create/">
+                            <img src="/assets/admin/buy.svg">
+                            <p>Buy Tokens</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/list/">
+                            <img src="/assets/admin/documentation.svg">
+                            <p>Documentation</p>
+                        </a>
+                    </li>
+                </ul>
 
+                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                    <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                </div>
+                <div class="ps-scrollbar-y-rail" style="top: 0px; height: 506px; right: 0px;">
+                    <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 423px;"></div>
+                </div>
+                <div class="ps-scrollbar-x-rail" style="width: 260px; left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 195px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 557px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 200px;"></div></div>
+            </div>
+        </div>
         @*<p>
-                @Html.ActionLink("Create New", "Create",null, new{@class= "btn btn-white btn-radius create_btn" })
-            </p>*@
+            @Html.ActionLink("Create New", "Create",null, new{@class= "btn btn-white btn-radius create_btn" })
+        </p>*@
         <table class="table table-light">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
                 @*<th>
-                        @Html.DisplayNameFor(model => model.EmailConfirmed)
-                    </th>*@
+                    @Html.DisplayNameFor(model => model.EmailConfirmed)
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.FirstName)
                 </th>
@@ -28,35 +93,35 @@
                     @Html.DisplayNameFor(model => model.LastName)
                 </th>
                 @*<th>
-                        @Html.DisplayNameFor(model => model.PasswordHash)
-                    </th>*@
+                    @Html.DisplayNameFor(model => model.PasswordHash)
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.PromoCode)
                 </th>
                 @*<th>
-                        @Html.DisplayNameFor(model => model.SecurityStamp)
-                    </th>*@
+                    @Html.DisplayNameFor(model => model.SecurityStamp)
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.PhoneNumber)
                 </th>
                 @*<th>
-                        @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
-                    </th>*@
+                    @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
+                </th>*@
                 @*<th>
-                        @Html.DisplayNameFor(model => model.TwoFactorEnabled)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.LockoutEnabled)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.AccessFailedCount)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.UserName)
-                    </th>*@
+                    @Html.DisplayNameFor(model => model.TwoFactorEnabled)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LockoutEnabled)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccessFailedCount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>*@
 
                 <th>
                     @Html.DisplayNameFor(model => model.Wallet)
@@ -65,14 +130,14 @@
                     @Html.DisplayNameFor(model => model.AddressToken)
                 </th>
                 @*<th>
-                        @Html.DisplayNameFor(model => model.NotificationResumptionSales)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.NotificationLatesNews)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.NotificationUnusualActivity)
-                    </th>*@
+                    @Html.DisplayNameFor(model => model.NotificationResumptionSales)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NotificationLatesNews)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NotificationUnusualActivity)
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.InvestmentAmount)
                 </th>
@@ -84,77 +149,77 @@
 
             @foreach (var item in Model)
             {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.EmailConfirmed)
-        </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.PasswordHash)
-        </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.PromoCode)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.SecurityStamp)
-        </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LockoutEnabled)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccessFailedCount)
-        </td>*@
-            @*<td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>*@
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.PasswordHash)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PromoCode)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.SecurityStamp)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LockoutEnabled)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AccessFailedCount)
+                    </td>*@
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>*@
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Wallet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddressToken)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InvestmentAmount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CurrentBalance)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.NotificationResumptionSales)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NotificationLatesNews)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NotificationUnusualActivity)
-        </td>*@
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
-                @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
-            </td>
-        </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Wallet)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AddressToken)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InvestmentAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CurrentBalance)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.NotificationResumptionSales)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NotificationLatesNews)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NotificationUnusualActivity)
+                    </td>*@
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                        @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                    </td>
+                </tr>
             }
 
         </table>

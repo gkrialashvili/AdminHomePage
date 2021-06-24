@@ -4,36 +4,101 @@
     ViewBag.Title = "Index";
 }
 
-    <section id="home_section" class="section_banner section_gradiant3">
-       
-       
-        <div class="container animation animated fadeInUp">
-
-            <p>
-                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-white btn-radius create_btn" })
-            </p>
-            <table class="table table-light">
-                <tr>
-                    <th>
-                        PromoCode
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PromoCode1)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                        </td>
-                    </tr>
-                }
-
-            </table>
+<section id="home_section" class="section_banner section_gradiant3" style=" min-height: 500px;">
+    <div class="sidebar">
+        <div class="logo">
+            <a href="/transactions/list/" class="simple-text">
+                <img style="max-width: 150px;" src="/assets/home/icon.png">
+            </a>
         </div>
-    </section>
+        <div class="logo logo-mini">
+            <a href="#" class="simple-text">
+                <img src="/assets/home/icon.png">
+            </a>
+        </div>
+        <div class="sidebar-wrapper ps-container ps-theme-default ps-active-y ps-active-x" data-ps-id="5e74ba75-ab95-a043-9201-fc6e654dfcc3">
+            <ul class="nav navigation-class">
+                <li class="">
+                    <a href="/dashboard/list/">
+                        <img src="/assets/admin/diamond.svg">
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/transactions/list/">
+                        <img src="/assets/admin/transaction.svg">
+                        <p>Transactions</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/users/list/">
+                        <img src="/assets/admin/user.svg">
+                        <p>Users</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/promocodes/list/">
+                        <img src="/assets/admin/promotion.svg">
+                        <p>Promocodes</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/manage/index/">
+                        <img src="/assets/admin/profile.svg">
+                        <p>Profile</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="/userdashboard/create/">
+                        <img src="/assets/admin/buy.svg">
+                        <p>Buy Tokens</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dashboard/list/">
+                        <img src="/assets/admin/documentation.svg">
+                        <p>Documentation</p>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+            </div>
+            <div class="ps-scrollbar-y-rail" style="top: 0px; height: 506px; right: 0px;">
+                <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 423px;"></div>
+            </div>
+            <div class="ps-scrollbar-x-rail" style="width: 260px; left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 195px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 557px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 200px;"></div></div>
+        </div>
+    </div>
+
+    <div class="container animation animated fadeInUp">
+
+        <p>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-white btn-radius create_btn" })
+        </p>
+        <table class="table table-light">
+            <tr>
+                <th>
+                    PromoCode
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PromoCode1)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>

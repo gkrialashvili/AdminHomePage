@@ -261,6 +261,7 @@
     <Content Include="assets\admin\promotion.svg" />
     <Content Include="assets\admin\RO.png" />
     <Content Include="assets\admin\sweetalert2.js" />
+    <Content Include="assets\admin\tokens.svg" />
     <Content Include="assets\admin\transaction.svg" />
     <Content Include="assets\admin\turbo.css" />
     <Content Include="assets\admin\turbo.js" />
